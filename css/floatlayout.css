@@ -4,19 +4,31 @@ body { line-height: 140%;
 
 div#centerpage
 {  margin-left: auto; margin-right: auto; 
-   width: 80%;
+   width: 95%;
    border: 2px solid darkblue; 
    border-radius: 16px;
    overflow-x: hidden;
 }
 
-header.banner { background-color: #bcd; }
+header.banner 
+{  background-color: #000;
+}
 
 header.banner > section.logo
 {  font-size: xx-large;
    font-weight: bold;
-   height: 60px;
-   padding-top: 30px;
+   height: 50px;
+   padding-top: 20px; 
+   align-text:center;
+   color:red;
+}
+
+.center 
+{   display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    width: 50%;
 }
 
 header.banner > nav 
@@ -45,8 +57,20 @@ section#main > article
 {  float: left;
    width: 69%; 
    background-color: #fed;
-   padding-left: 2em;
+   padding-left: 1em;
+   padding-right: 1em;
 }
 
 section#main > aside 
 {  float: left; padding-left: 1em; }
+
+table
+{
+   border: 2px solid #000000;
+}
+
+th, td {
+	padding: 2px 2px 2px 2px;
+   border: 1px solid
+}
+	
