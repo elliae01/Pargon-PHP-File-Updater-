@@ -15,55 +15,76 @@
 		#clear {
 			clear: both; }
 	</style>
+<!--	<xml id="Txt" src="../text/InI-MC-Updater-Log.txt"></xml> -->
 </head>
 
 <body>
 	<div id="centerpage">
 		<header class="banner">
 		<img src="../images/nninc.jpg" alt="Paragon's Logo" class="center"></img>
-		<section class="logo">Logo&#xA0;and&#xA0;Banner</section>
+		<section class="logo">Today's&#xA0;Status&#xA0;By Computer</section>
 			<nav>         
-				<a href="#">SiteLink1</a>
-				<a href="#">SiteLink2</a>
-				<a href="#">SiteLink3</a>
-				<a href="#">SiteLink4</a>
+				<a href="../FileControl.html">Start Over</a>
+				<a href="./pcstatus.html">PC Status</a>
 			</nav>
 		</header>
 		
 		<section id="main">
 			<!-- Main Content Begin -->
 			<article>
-			<h1 id="main_page">Main Page Content<h1>
-		<table>
+			<h1>Main Page Content<h1>
+		<textarea name="logfile" form="pcuserlistform"  src="../text/InI-MC-Updater-Log.txt">
+Sample Content
+Sat 09/08/2018 at 14:15:17.82 - IT101347 -  10.128.6.127(Preferred)  - devind Started Update 
+Sat 09/08/2018 at 14:15:22.62 - IT101347 - devind Completed Update from \\NETWORKSRV05HQ 
+Sun 09/09/2018 at 14:45:04.87 - IT100908 -  10.128.6.165(Preferred)  - ericw Started Update 
+MasterCam 2018 Does Not Appear to be on this computer.
+Sun 09/09/2018 at 14:56:27.84 - IT101348 -  10.128.6.71(Preferred)  - kful01 Started Update 
+Sun 09/09/2018 at 14:56:43.12 - IT101348 - kful01 Completed Update from \\NETWORKSRV04HQ 
+		</textarea>
+		<br>
+		<table  src="../text/InI-MC-Updater-Log.txt">
 			<tr class="head">
-				<th></th>
-				<th>Test Column 1</th>
-				<th>Test Column 2</th>
-				<th>Test Column 3</th>
+				<th>Date<br>Time</th>
+				<th>Computer</th>
+				<th>IP</th>
+				<th>User</th>
+				<th>Notes</th>
 			</tr>
 			<tr>
-				<th>Test Row 1</th>
-				<td>Sat, 4 Feb 2012<br />11am - 2pm</td>
-				<td>Sat, 3 Mar 2012<br />11am - 2pm</td>
-				<td>Sat, 17 Mar 2012<br />11am - 2pm</td>
+				<th>Sat 09/08/2018<br>14:15:17.82</th>
+				<td>IT101347</td>
+				<td>10.128.6.165</td>
+				<td>devind</td>
+				<td>Started Update</td>
 			</tr>
 			<tr class="even">
-				<th>Test Row 2</th>
-				<td>Sat, 7 Apr 2012<br />11am - 1pm</td>
-				<td>Sat, 5 May 2012<br />11am - 1pm</td>
-				<td>Sat, 19 May 2012<br />11am - 1pm</td>
+				<th>Sat 09/08/2018<br>14:15:22.62</th>
+				<td>IT101347</td>
+				<td>10.128.6.165</td>
+				<td>devind</td>
+				<td>Completed Update from \\NETWORKSRV05HQ</td>
 			</tr>
 			<tr>
-				<th>Found Poems &amp; Outsider Poetry</th>
-				<td>Sat, 9 Jun 2012<br />11am - 2pm</td>
-				<td>Sat, 7 Jul 2012<br />11am - 2pm</td>
-				<td>Sat, 21 Jul 2012<br />11am - 2pm</td>
+				<th>Sun 09/09/2018<br>14:45:04.87</th>
+				<td>IT100908</td>
+				<td>10.128.6.165</td>
+				<td>ericw</td>
+				<td>Started Update </td>
 			</tr>
 			<tr class="even">
-				<th>Test Row 4</th>
-				<td>Sat, 4 Aug 2012<br />11am - 4pm</td>
-				<td>Sat, 8 Sep 2012<br />11am - 4pm</td>
-				<td>Sat, 15 Sep 2012<br />11am - 4pm</td>
+				<th>Sun 09/09/2018<br>14:47:04.87</th>
+				<td>IT100908</td>
+				<td>10.128.6.165</td>
+				<td>ericw</td>
+				<td>MasterCam 2018 Does Not Appear to be on this computer.</td>
+			</tr>
+			<tr>
+				<th>Sun 09/09/2018<br>14:56:27.84</th>
+				<td>IT101348</td>
+				<td>10.128.6.71</td>
+				<td>kful01</td>
+				<td>Started Update </td>
 			</tr>
 		</table>
 
