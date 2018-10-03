@@ -76,7 +76,9 @@ section#main > article
 section#main > aside 
 {  float: left; 
    /*overflow: hidden;*/
-   padding-left: 1em; 
+   padding-left: 0em; 
+   width: 20%;
+   min-width: 10%;
 }
 
 table
