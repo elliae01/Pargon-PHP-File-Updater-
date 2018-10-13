@@ -3,6 +3,7 @@
 
 <html>
 <head>
+	<title>Paragon Medical</title>
 	<meta charset="utf-8"/>
 	<title>Page Floate Layout Template</title>
 	<link rel="stylesheet" href="../css/floatlayout.css" 
@@ -11,50 +12,52 @@
 		body {
 			margin: 50px; }
 		#main_page {
-			margin-bottom: 160px; }
+			margin-bottom: 50px;
+			padding-left: 185px;
+			}
+		#main_page2{
+			float: right;
+			padding-right: 5px;
+		}
 		#clear {
 			clear: both; }
 	</style>
 </head>
 
 <body>
-	<div id="centerpage">
+	<div id="centerpage" style="width: 40%">
 		<header class="banner">
 		<img src="../images/nninc.jpg" alt="Paragon's Logo" class="center"></img>
-			<section class="logo">Logo&#xA0;and&#xA0;Banner</section>
+			<section class="logo">Paragon&#xA0;Update&#xA0;Monitor</section>
 			<nav>         
-				<a href="#">SiteLink1</a>
-				<a href="#">SiteLink2</a>
-				<a href="#">SiteLink3</a>
-				<a href="#">SiteLink4</a>
+				<a href="#"></a>
+				<a href="#"></a>
+				<a href="#"></a>
+				<a href="#"></a>
 			</nav>
 		</header>
 		
 		<section id="main">
 			<!-- Main Content Begin -->
-			<article>
-			    <br>
-				<h1 id="main_page">Administrator Login
-					<br><br>
-					<font size="3px" color="blue">Username</font>
-					<br>
-					<input type="text" id="username"><br/><br/>
-					<font size="3px" color="blue">Password</font>
-					<br>
-					<input type="text" id="password"><br/><br/>
-				<h1>
-			</article>
-			<!-- Main Content End -->
-			<!-- Right Box Begin-->
-
-			<aside>
-				<h1>Reference Links</h1>
-				<embed  id="mysidebar" src="sidebar.html">
-			</aside>
-			<!-- Right Box End-->
-
-			<div id="clear"></div>
+				<br>
+					<h1 id="main_page">Administrator Login
+						<br><br>
+						<font size="3px" color="blue">Username</font>
+						<br>
+						<input type="text" id="username" placeholder="Enter username" style="padding:12px 20px"><br/>
+						<font size="3px" color="blue">Password</font>
+						<br>
+						<input type="text" id="password" placeholder="Enter password" style="padding:12px 20px"><br/><br>
+						<button type="submit" id="submit1" style="padding:7px 68px">Login</button><br>
+					    <input type="checkbox" id="password">
+						<font size="2px" color="blue" style="font-weight: normal"> Remember me</font><br/>
+					<h1>
+					<bottom id="main_page2">
+						<font size="2px" color="blue" style="font-weight: normal"> Forgot 
+						<a href="link to change password screen"> password?</a></font>	
+					</bottom>
 		</section>
+		
 	</div>
 
 	<footer>
