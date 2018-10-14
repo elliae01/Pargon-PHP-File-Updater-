@@ -11,38 +11,52 @@
 		body {
 			margin: 50px; }
 		#main_page {
-			margin-bottom: 160px; }
+			margin-bottom: 0px; }
 		#clear {
 			clear: both; }
 	</style>
 </head>
 
 <body>
-	<div id="centerpage">
+	<div id="centerpage" style="width: 60%">
 		<header class="banner">
 		<img src="../images/nninc.jpg" alt="Paragon's Logo" class="center"></img>
-			<section class="logo">Logo&#xA0;and&#xA0;Banner</section>
+			<section class="logo">File&#xA0;Locations&#xA0;</section>
 			<nav>         
-				<a href="#">SiteLink1</a>
-				<a href="#">SiteLink2</a>
-				<a href="#">SiteLink3</a>
-				<a href="#">SiteLink4</a>
+				<a href="#">&larr; Return to List</a>
+				<a href="#"></a>
+				<a href="#"></a>
+				<a href="#"></a>
 			</nav>
 		</header>
 		
-		<section id="main">
+		<section id="main_page" style="height:425px">
+			
 			<!-- Main Content Begin -->
-			<article>
-			<h1 id="main_page">Main Page Content<h1>
-
-			</article>
+					<br><br>
+					<center><fieldset style="width:200px;border-color:blue;border-style:dotted solid;
+					background-color:  #F0F8FF;">
+						<legend><b><font size="5px" color="blue">File Selected</font></b></legend><br>
+						<input type="text" id="newPassword"
+    						style="padding:12px 130px;margin-bottom:20px" disabled="disabled">
+    						</center></fieldset><br><br>
+    						
+					<article style="width:870px;overflow-y: visible;">
+						<center>
+						<button type="reset" id="reset1" style="padding:7px 45px;">Set Source Folder</button>
+    					<input type="text" id="newPassword"
+    						style="padding:12px 100px;margin-bottom:5px"><br>
+    					<button type="reset" id="reset1" style="padding:7px 33px;">Set Destination Folder</button>
+    					<input type="text" id="newPassword"
+    						style="padding:12px 100px;margin-bottom:5px"><br><br>
+    					<button type="reset" id="reset1" style="padding:15px 93px;">Update</button></center>
+					</article>
+					
 			<!-- Main Content End -->
+			
 			<!-- Right Box Begin-->
 
-			<aside>
-				<h1>Reference Links</h1>
-				<embed  id="mysidebar" src="sidebar.html">
-			</aside>
+
 			<!-- Right Box End-->
 
 			<div id="clear"></div>
@@ -50,7 +64,7 @@
 	</div>
 
 	<footer>
-		<p style="text-align: center;">footer</p>
+		<p style="text-align: center;"></p>
 	</footer>
 	
 </body>
