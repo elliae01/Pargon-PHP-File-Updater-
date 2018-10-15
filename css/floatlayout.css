@@ -115,5 +115,5 @@ tr:hover
 }
 .even
 {
-   color: red;
+   color: red; /*Having the even be red */
 }
