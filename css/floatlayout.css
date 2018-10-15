@@ -50,7 +50,7 @@ header.banner > nav a:hover
 
 section#main
 {  
-   overflow-y: visible;
+   overflow-y: auto;
    background-color: #def;
 }
 
