@@ -2,38 +2,76 @@
 <!-- This example is based on the examle in "Dynamic Web Programming and HTML5" by Paul S. Wang -->
 
 <html>
+
 <head>
 	<meta charset="UTF-8">
 	<title>Page Floate Layout Template</title>
-	<link rel="stylesheet" href="../css/floatlayout.css" 
-		type="text/css" title="float layout style">
+	<link rel="stylesheet" href="../css/floatlayout.css" type="text/css" title="float layout style">
 	<style type="text/css">
 		body {
-			margin: 50px; }
+			margin: 50px;
+		}
+
 		#main_page {
-			margin-bottom: 160px; }
+			margin-bottom: 160px;
+		}
+
 		#clear {
-			clear: both; }
+			clear: both;
+		}
+
+		p {
+			margin: 5px auto;
+			font-size: 24px;
+			font-weight:bold;
+		}
+
+		fieldset {
+			margin: 10px;
+			width:35%;
+		}
 	</style>
 </head>
 
 <body>
 	<div id="centerpage">
 		<header class="banner">
-		<img src="../images/nninc.jpg" alt="Paragon's Logo" class="center"></img>
-			<section class="logo">Logo&#xA0;and&#xA0;Banner</section>
-			<nav>         
+			<img src="../images/nninc.jpg" alt="Paragon's Logo" class="center"></img>
+			<section class="logo">User Options</section>
+			<nav>
 				<a href="#">SiteLink1</a>
 				<a href="#">SiteLink2</a>
 				<a href="#">SiteLink3</a>
 				<a href="#">SiteLink4</a>
 			</nav>
 		</header>
-		
+		<fieldset>
+			<p>
+				Forbidden List of Activities
+			</p>
+			<input id="deleteCheck" type="checkbox" name="checkbox1"> Deletion
+			<br>
+			<input id="loggingCheck" type="checkbox" name="logging"> Logging
+			<br>
+			<input id="copyCheck" type="checkbox" name="copying"> Copying
+
+		</fieldset>
+		<fieldset>
+			<p>
+				Obsolete List of Activities
+			</p>
+			<input id="deleteCheck" type="checkbox" name="checkbox1"> Deletion
+			<br>
+			<input id="loggingCheck" type="checkbox" name="logging"> Logging
+			<br>
+			<input id="copyCheck" type="checkbox" name="copying"> Copying
+		</fieldset>
+
 		<section id="main">
 			<!-- Main Content Begin -->
 			<article>
-			<h1 id="main_page">Main Page Content<h1>
+				<h1 id="main_page">Main Page Content
+					<h1>
 
 			</article>
 			<!-- Main Content End -->
@@ -41,7 +79,7 @@
 
 			<aside>
 				<h1>Reference Links</h1>
-				<embed  id="mysidebar" src="sidebar.html">
+				<embed id="mysidebar" src="sidebar.html">
 			</aside>
 			<!-- Right Box End-->
 
@@ -52,6 +90,7 @@
 	<footer>
 		<p style="text-align: center;">footer</p>
 	</footer>
-	
+
 </body>
+
 </html>
