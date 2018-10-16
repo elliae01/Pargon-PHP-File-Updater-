@@ -84,6 +84,7 @@ section#main > aside
 table
 {
    border: 2px solid #000000;
+   background-color: white;
 }
 
 textarea
@@ -115,5 +116,5 @@ tr:hover
 }
 .even
 {
-   color: red; /*Having the even be red */
+   background-color: lightgrey;
 }
