@@ -2,38 +2,50 @@
 <!-- This example is based on the examle in "Dynamic Web Programming and HTML5" by Paul S. Wang -->
 
 <html>
+
 <head>
-	<meta charset="utf-8"/>
+	<meta charset="utf-8" />
 	<title>Page Floate Layout Template</title>
-	<link rel="stylesheet" href="../css/floatlayout.css" 
-		type="text/css" title="float layout style">
+	<link rel="stylesheet" href="../css/floatlayout.css" type="text/css" title="float layout style">
 	<style type="text/css">
 		body {
-			margin: 50px; }
+			margin: 50px;
+		}
+
 		#main_page {
-			margin-bottom: 160px; }
+			margin-bottom: 160px;
+		}
+
 		#clear {
-			clear: both; }
+			clear: both;
+		}
 	</style>
 </head>
 
 <body>
 	<div id="centerpage">
 		<header class="banner">
-		<img src="../images/nninc.jpg" alt="Paragon's Logo" class="center"></img>
-			<section class="logo">Logo&#xA0;and&#xA0;Banner</section>
-			<nav>         
-				<a href="#">SiteLink1</a>
-				<a href="#">SiteLink2</a>
-				<a href="#">SiteLink3</a>
-				<a href="#">SiteLink4</a>
+			<img src="../images/nninc.jpg" alt="Paragon's Logo" class="center"></img>
+			<section class="logo">Add New Items</section>
+			<nav>
+				<a href="./pcuserlist.html">PC User List</a>
+				<a href="./reviewItems.html">Review Controlled Items</a>
+				<a href="./administeritems.html">Administer List of Controlled Items</a>
+				<a href="./logs.html">Log List</a>
 			</nav>
 		</header>
-		
+
 		<section id="main">
 			<!-- Main Content Begin -->
-			<article>
-			<h1 id="main_page">Main Page Content<h1>
+			<article style="font-size:1.3em">
+				<br>
+				<label for="source-folder">Select Source Folder: &ensp;</label>
+				<input type="file" id="source-folder" webkitdirectory directory multiple/> <br><br>
+				<label for="source-path">Source Path: &ensp;</label>
+				<input type="file" multiple><br><br>
+				<label for="destination">Destination: &ensp;</label>
+				<input type="file" multiple> <br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 			</article>
 			<!-- Main Content End -->
@@ -41,7 +53,7 @@
 
 			<aside>
 				<h1>Reference Links</h1>
-				<embed  id="mysidebar" src="sidebar.html">
+				<embed id="mysidebar" src="sidebar.html">
 			</aside>
 			<!-- Right Box End-->
 
@@ -50,8 +62,9 @@
 	</div>
 
 	<footer>
-		<p style="text-align: center;">footer</p>
+		
 	</footer>
-	
+
 </body>
+
 </html>

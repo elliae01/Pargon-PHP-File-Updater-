@@ -2,57 +2,54 @@
 <!-- This example is based on the examle in "Dynamic Web Programming and HTML5" by Paul S. Wang -->
 
 <html>
-<head>
 
-	<meta charset="utf-8"/>
-	<title>Page Floate Layout Template</title>
-	<link rel="stylesheet" href="css/floatlayout.css" 
-		type="text/css" title="float layout style">
-	<style type="text/css">
-		body {
-			margin: 50px; }
-		#main_page {
-			margin-bottom: 160px; }
-		#clear {
-			clear: both; }
-	</style>
+<head>
+    <meta charset="utf-8" />
+    <title>Page Floate Layout Template</title>
+    <link rel="stylesheet" href="./css/floatlayout.css" 
+        type="text/css" title="float layout style">
+    <style type="text/css">
+        body {
+            margin: 50px;
+        }
+
+        #main_page {
+            margin-bottom: 1px;
+        }
+
+        #clear {
+            clear: both;
+        }
+    </style>
 </head>
 
 <body>
-	<div id="centerpage">
-		<header class="banner">
-		<img src="images/nninc.jpg" alt="Paragon's Logo" class="center"></img>
-			<section class="logo">Welcome&#xA0;to&#xA0;Paragon Updater</section>
-			<nav>         
-				<a href="#">SiteLink1</a>
-				<a href="#">SiteLink2</a>
-				<a href="#">SiteLink3</a>
-				<a href="#">SiteLink4</a>
-			</nav>
-		</header>
-		
-		<section id="main">
-			<!-- Main Content Begin -->
-			<article>
-			<h1 id="main_page">Main Page Content<h1>
+    <div id="centerpage">
+        <header class="banner">
+            <img src="./images/nninc.jpg" alt="Paragon's Logo" class="center"></img>
+            <section class="logo">Paragon&#xA0;Medical</section>
+            <!--What should be here? PageName? -->
+        </header>
 
-			</article>
-			<!-- Main Content End -->
-			<!-- Right Box Begin-->
+        <section id="main">
+            <!-- Main Content Begin -->
+            
+                <br><br><br><br><br><br><br><br><br><br>
+                <div class="loader" style="align-text:center"></div>
+                <br><br><br><br><br><br><br><br><br><br>
+                <!-- This is where the link to next page goes. Not certain which is supposed to be the next page, though-->
+                <script>setTimeout(function(){window.location.href='./html/copystatus.html'},2000);</script>
+            
+            <!-- Main Content End -->
 
-			<aside>
-				<h1>Reference Links</h1>
-				<embed  id="mysidebar" src="./html/sidebar.html">
-			</aside>
-			<!-- Right Box End-->
+            <div id="clear"></div>
+        </section>
+    </div>
 
-			<div id="clear"></div>
-		</section>
-	</div>
+    <footer>
+        <p style="text-align: center;"><a href="./loginadmin.html">To admin login page</a></p>
+    </footer>
 
-	<footer>
-		<p style="text-align: center;">footer</p>
-	</footer>
-	
 </body>
+
 </html>
