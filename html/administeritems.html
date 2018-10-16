@@ -7,11 +7,12 @@
 	<title>Page Floate Layout Template</title>
 	<link rel="stylesheet" href="../css/floatlayout.css" 
 		type="text/css" title="float layout style">
+	<script type="text/javascript" src="../js/administeritems.js"></script>
 	<style type="text/css">
 		body {
 			margin: 50px; }
 		#main_page {
-			margin-bottom: 160px; }
+			margin-bottom: 1px; }
 		#clear {
 			clear: both; }
 	</style>
@@ -20,7 +21,7 @@
 <body>
 	<div id="centerpage">
 		<header class="banner">
-		<img src="../images/nninc.jpg" alt="Paragon's Logo" class="center"></img>
+		<img src="../images/nninc.jpg" alt="Paragons Logo" class="center"></img>
 			<section class="logo">Administer List of Controlled Items</section>
 			<nav>         
 				<a href="./portal.html">Portal</a>
@@ -30,8 +31,26 @@
 		<section id="main">
 			<!-- Main Content Begin -->
 			<article>
-			<h1 id="main_page">Main Page Content</h1>
-
+			<h1 id="main_page">Controlled file list</h1>
+			Filter by software:
+			<select name="software">
+				<option>All Items</option>
+				<option>MasterCam</option>
+				<option>NX</option>
+				<option>Partmaker</option>
+				<option>NCSimul</option>
+				<option>Logs</option>
+			</select>
+			 / Filter by Type:
+			<select name="machinetype">
+				<option>All Items</option>
+				<option>Mill</option>
+				<option>Lathe</option>
+				<option>Wire</option>
+			</select>
+			<table>
+				<script src="../js/admintable.js"></script>
+			</table>
 			</article>
 			<!-- Main Content End -->
 			<!-- Right Box Begin-->
@@ -47,7 +66,7 @@
 	</div>
 
 	<footer>
-		<p style="text-align: center;">footer</p>
+		<p style="text-align: center;"></p>
 	</footer>
 	
 </body>
