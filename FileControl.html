@@ -20,6 +20,28 @@
         #clear {
             clear: both;
         }
+        .loader {
+            border: 16px solid #f3f3f3;
+            /* Light grey */
+            border-top: 16px solid #00008b;
+            /* Blue */
+            border-radius: 50%;
+            width: 10em;
+            height: 10em;
+            animation: spin 2s linear infinite;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 10px;
+        }
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
     </style>
 </head>
 
@@ -38,7 +60,7 @@
                 <div class="loader" style="align-text:center"></div>
                 <br><br><br><br><br><br><br><br><br><br>
                 <!-- This is where the link to next page goes. Not certain which is supposed to be the next page, though-->
-                <script>setTimeout(function(){window.location.href='./html/copystatus.html'},2000);</script>
+                <script>setTimeout(function(){window.location.href='./html/copystatus.html'},4000);</script>
             
             <!-- Main Content End -->
 
@@ -47,7 +69,7 @@
     </div>
 
     <footer>
-        <p style="text-align: center;"><a href="./loginadmin.html">To admin login page</a></p>
+        <p style="text-align: center;"><a href="./html/loginadmin.html">To admin login page</a></p>
     </footer>
 
 </body>
