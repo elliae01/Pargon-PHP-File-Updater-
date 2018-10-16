@@ -24,6 +24,25 @@
 	</style>
 </head>
 
+<script>
+	//Function to verify user credentials
+	function match(){
+		
+		var username = document.getElementById("username").value;
+		var password = document.getElementById("password").value;
+
+		if(username==password){
+			alert("Password successfully updated!")
+			window.location = "loginadmin.html"
+		}
+		else{
+			alert("Passwords do not match!")
+		}
+		
+		
+	}
+</script>
+
 <body>
 	<div id="centerpage" style="width: 40%">
 		<header class="banner">
