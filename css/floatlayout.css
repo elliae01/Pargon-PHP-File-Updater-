@@ -18,6 +18,7 @@ header.banner > section.logo
 {  font-size: xx-large;
    font-weight: bold;
    height: 50px;
+   margin-left: 10px;
    padding-top: 20px; 
    align-text:center;
    color:red;
