@@ -28,10 +28,8 @@
 			<img src="../images/nninc.jpg" alt="Paragon's Logo" class="center"></img>
 			<section class="logo">Add New Items</section>
 			<nav>
-				<a href="./pcuserlist.html">PC User List</a>
-				<a href="./reviewItems.html">Review Controlled Items</a>
-				<a href="./administeritems.html">Administer List of Controlled Items</a>
-				<a href="./logs.html">Log List</a>
+				<a href="./portal.html">Return to Portal</a>
+				<a href="./administeritems.html">Return to Administer Items</a>
 			</nav>
 		</header>
 
@@ -39,13 +37,31 @@
 			<!-- Main Content Begin -->
 			<article style="font-size:1.3em">
 				<br>
-				<label for="source-folder">Select Source Folder: &ensp;</label>
+				<label for="software">Select a Software Type: &ensp;</label>
+				<select id="software" name="software">
+					<option selected disabled>Select a Software Type</option>
+					<option>MasterCam</option>
+					<option>NX</option>
+					<option>Partmaker</option>
+					<option>NCSimul</option>
+					<option>Logs</option>
+				</select><br><br>
+				<label for="machinetype">Select a Machine Type: &ensp;</label>
+				<select id="machinetype" name="machinetype">
+					<option selected disabled>Select a Machine Type</option>
+					<option>Mill</option>
+					<option>Lathe</option>
+					<option>Wire</option>
+				</select><br><br>
+				
+				<label for="source-folder">File Folder or Rule: &ensp;</label>
 				<input type="file" id="source-folder" webkitdirectory directory multiple/> <br><br>
 				<label for="source-path">Source Path: &ensp;</label>
 				<input type="file" multiple><br><br>
-				<label for="destination">Destination: &ensp;</label>
-				<input type="file" multiple> <br><br><br><br><br><br><br><br><br><br><br><br>
+				<label for="destination">Destination Folder: &ensp;</label>
+				<input type="file" multiple> <br><br><br>
 
+				<button type="submit" name="submit">Add This Item</button> <br><br><br><br><br><br><br><br><br><br><br><br>
 
 			</article>
 			<!-- Main Content End -->
