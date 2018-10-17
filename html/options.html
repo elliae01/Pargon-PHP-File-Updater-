@@ -13,7 +13,11 @@
 		}
 
 		#main_page {
-			margin-bottom: 160px;
+			margin: 10px;
+			font-weight: bold;
+			width: 40%;
+			border-radius: 5px;
+
 		}
 
 		#clear {
@@ -23,13 +27,15 @@
 		p {
 			margin: 5px auto;
 			font-size: 24px;
-			font-weight:bold;
+			font-weight: bold;
+			color: blue;
 		}
 
 		fieldset {
 			margin: 10px;
-			width:35%;
+			width: 35%;
 			border-radius: 8px;
+			background-color: orange;
 		}
 	</style>
 </head>
@@ -40,41 +46,37 @@
 			<img src="../images/nninc.jpg" alt="Paragon's Logo" class="center"></img>
 			<section class="logo">User Options</section>
 			<nav>
-				<a href="#">Main Page</a>
-				<a href="#">SiteLink2</a>
-				<a href="#">SiteLink3</a>
-				<a href="#">SiteLink4</a>
+				<a href="./portal.html">Return to Portal</a>
 			</nav>
 		</header>
-		<fieldset>
-			<p>
-				Forbidden List of Activities
-			</p>
-			<input id="forbiddenDeleteCheck" type="checkbox" name="checkbox1"> Deletion
-			<br>
-			<input id="forbiddenLoggingCheck" type="checkbox" name="logging"> Logging
-			<br>
-			<input id="forbiddenCopyCheck" type="checkbox" name="copying"> Copying
-
-		</fieldset>
-		<fieldset>
-			<p>
-				Obsolete List of Activities
-			</p>
-			<input id="obsoleteDeleteCheck" type="checkbox" name="checkbox1"> Deletion
-			<br>
-			<input id="obsoleteLoggingCheck" type="checkbox" name="logging"> Logging
-			<br>
-			<input id="obsoleteCopyCheck" type="checkbox" name="copying"> Copying
-		</fieldset>
 
 		<section id="main">
-			<!-- Main Content Begin -->
-			<!--<article>
-				<h1 id="main_page">Main Page Content
-					<h1>
 
-			</article>-->
+			<!-- Main Content Begin -->
+			<article>
+				<!--<h1 id="main_page">Main Page Content </h1>-->
+				<fieldset>
+					<p>
+						Forbidden List of Activities
+					</p>
+					<input id="forbiddenDeleteCheck" type="checkbox" name="checkbox1"> Deletion
+					<br>
+					<input id="forbiddenLoggingCheck" type="checkbox" name="logging"> Logging
+					<br>
+					<input id="forbiddenCopyCheck" type="checkbox" name="copying"> Copying
+
+				</fieldset>
+				<fieldset>
+					<p>
+						Obsolete List of Activities
+					</p>
+					<input id="obsoleteDeleteCheck" type="checkbox" name="checkbox1"> Deletion
+					<br>
+					<input id="obsoleteLoggingCheck" type="checkbox" name="logging"> Logging
+					<br>
+					<input id="obsoleteCopyCheck" type="checkbox" name="copying"> Copying
+				</fieldset>
+			</article>
 			<!-- Main Content End -->
 			<!-- Right Box Begin-->
 
@@ -87,9 +89,9 @@
 			<div id="clear"></div>
 		</section>
 	</div>
-
 	<footer>
-		<p style="text-align: center;">footer</p>
+
+
 	</footer>
 
 </body>
