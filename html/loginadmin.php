@@ -28,25 +28,6 @@
 	</style>
 </head>
 
-<script>
-	//Function to verify user credentials
-	function match(){
-		
-		var username = document.getElementById("username").value;
-		var password = document.getElementById("password").value;
-
-		if(username==password){
-			alert("Password successfully updated!")
-			window.location = "loginadmin.html"
-		}
-		else{
-			alert("Passwords do not match!")
-		}
-		
-		
-	}
-</script>
-
 <body>
 	
 	<?php include '../php/login.php';?>
@@ -70,10 +51,12 @@
 			 
 			<fieldset id="main_page" style="width:300px;border-color:blue;border-style:inset;
 					background-color:  #F0F8FF;">
-				<legend>Admin Login</legend>
+				<legend><font size="4px" color="blue">
+					<b>Admin Login</b</font></legend>
 				<br><br>
 				<form action="<?= $_SERVER["PHP_SELF"] ?>" method="post">
 					
+					<font size="3px" color="blue"><?php echo $error1;?></font><br>
 					<font size="3px" color="blue">Username</font><br>
 					
 					<?php if (isset($_POST["user"])): ?>
@@ -89,13 +72,30 @@
 						value=""><br/>
 					<?php endif ?>
 					
-					<font size="3px" color="blue">Password</font>
-					<br>
-					<input type="text" id="password" name="pass" placeholder="Enter password" style="padding:12px 20px"><br/><br>
-					<button type="login" id="submit" style="padding:7px 45px">Login</button>
-					<button type="cancel" id="cancel1" onclick="location.href='../FileControl.html'" style="padding:7px 17px">Cancel</button><br>
-				    <input type="checkbox" id="password">
-					<font size="2px" color="blue" style="font-weight: normal"> Remember me</font><br/>
+					<font size="3px" color="blue">Password</font><br>
+					
+					<?php if (isset($_POST["pass"])): ?>
+					<input type="password" id="password" name="pass" placeholder="Enter password" style="padding:12px 20px"
+						value="<?= htmlspecialchars($_POST["pass"])?>"><br/>
+					
+					<?php elseif (isset($_COOKIE["pass"])): ?>
+					<input type="password" id="password" name="pass" placeholder="Enter password" style="padding:12px 20px"
+						value="<?= htmlspecialchars($_COOKIE["pass"]) ?>"><br/>
+					
+					<?php else: ?>	
+					<input type="password" id="password" name="pass" placeholder="Enter password" style="padding:12px 20px"
+						value=""><br/>
+					<?php endif ?>
+					
+					<button type="login" id="submit" style="padding:7px 45px;margin-top:5px;">Login</button>
+					<button type="cancel" id="cancel1" onclick="location.href='../FileControl.html'" 
+					style="padding:7px 18px;">Cancel</button><br>
+				    
+				    <input type="checkbox" name="memberSave" id="password" style="margin-top:8px;"> 
+				    
+					<font size="2px" color="blue" style="font-weight: normal"> Remember me</font>
+					<br/><br><br><br><br>
+					
 				</form>
 			</fieldset>
 			
