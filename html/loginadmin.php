@@ -28,6 +28,14 @@
 	</style>
 </head>
 
+<script>
+	
+	function redirect(){
+		
+		window.location.href = "../FileControl.html"
+	}
+	
+</script>
 <body>
 	
 	<?php include '../php/login.php';?>
@@ -88,7 +96,7 @@
 					<?php endif ?>
 					
 					<button type="login" id="submit" style="padding:7px 45px;margin-top:5px;">Login</button>
-					<button type="cancel" id="cancel1" onclick="location.href='../FileControl.html'" 
+					<button type="button" id="cancel1" name="cancel" onclick="redirect()" 
 					style="padding:7px 18px;">Cancel</button><br>
 				    
 				    <input type="checkbox" name="memberSave" id="password" style="margin-top:8px;"> 

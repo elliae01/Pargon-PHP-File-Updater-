@@ -20,7 +20,11 @@
     define("USER", "cs372");
     define("PASS", "pfw");
 
-
+    if ($_GET["cancel"]=="selected"){
+        
+        header("Location: ../FileControl.html");
+        
+    }
 
     // else if username and password were submitted, grab them instead
     if (isset($_POST["user"]) && isset($_POST["pass"]))
