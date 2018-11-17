@@ -7,6 +7,11 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="../css/floatlayout.css" 
 		type="text/css" title="float layout style">
+		
+	<!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	
 	<style type="text/css">
 		body {
 			margin: 50px; 
@@ -40,11 +45,11 @@
 	
 	<?php include '../php/login.php';?>
 	
-	
-	<div id="centerpage" style="width: 40%">
+	<div class = "container">
+	<div id="centerpage" style="width: 60%">
 		<header class="banner">
 		<img src="../images/nninc.jpg" alt="Paragon's Logo" class="center"></img>
-			<section class="logo">Paragon&#xA0;Update&#xA0;Monitor</section>
+			<section class="logo">Admin Login</section>
 			<nav>         
 				<a href="#"></a>
 				<a href="#"></a>
@@ -55,13 +60,13 @@
 		
 		<section id="main">
 			<!-- Main Content Begin -->
-			<br>
+			<br><br>
 			 
 			<fieldset id="main_page" style="width:300px;border-color:blue;border-style:inset;
 					background-color:  #F0F8FF;">
 				<legend><font size="4px" color="blue">
-					<b>Admin Login</b</font></legend>
-				<br><br>
+					<b></b</font></legend>
+				
 				<form action="<?= $_SERVER["PHP_SELF"] ?>" method="post">
 					
 					<font size="3px" color="blue"><?php echo $error1;?></font><br>
@@ -102,7 +107,7 @@
 				    <input type="checkbox" name="memberSave" id="password" style="margin-top:8px;"> 
 				    
 					<font size="2px" color="blue" style="font-weight: normal"> Remember me</font>
-					<br/><br><br><br><br>
+					<br/><br><br>
 					
 				</form>
 			</fieldset>
@@ -113,6 +118,7 @@
 			</bottom>
 		</section>
 		
+	</div>
 	</div>
 
 	<footer>
