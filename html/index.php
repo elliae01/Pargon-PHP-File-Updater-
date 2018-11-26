@@ -5,7 +5,7 @@ A controller for the CS372 course project.
 -->
 
 <?php 
-
+echo('Hi. You are now on the index.');
 require_once('../includes/helpers.php'); 
 
 // determine which page to render

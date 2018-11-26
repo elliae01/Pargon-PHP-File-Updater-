@@ -2,7 +2,7 @@
    define('DB_SERVER', 'localhost');
    define('DB_USERNAME', 'cs372');
    define('DB_PASSWORD', 'pfw');
-   define('DB_DATABASE', 'cs372');
+   define('DB_DATABASE', 'database');
    
    function dbConnect()
    {
