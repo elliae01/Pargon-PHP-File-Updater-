@@ -147,7 +147,7 @@
 					
 					<label for="source-folder">File Folder or Rule: &ensp;</label>
 					<input type="button" value="Get Ext" onclick="getExt()">
-					<input type="file" id="rule" name="rule" /><br>
+					<input type="file" id="rule" name="rule" onchange="changeText()" /><br>
 					<input type="text" id="ruletext" name="ruletext"/> <br><br>
 					
 					<label for="source-path">Source Path: &ensp;</label><br>

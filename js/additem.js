@@ -28,3 +28,13 @@ function getPath() {
     Form.elements['file_src1'].value = imgPath1;
     Form.elements['file_src2'].value = imgPath2;
 }
+
+function test(){
+    alert("EYYYYYYYYYYYYYYYYYYYYYYYYYY");
+}
+
+function changeText(){
+    var box = document.getElementById("ruletext");
+    var name = document.getElementById("rule").files[0].name;
+    box.value = name;
+}
