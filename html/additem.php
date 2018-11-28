@@ -59,11 +59,14 @@
 				</select><br><br>
 				
 				<label for="source-folder">File Folder or Rule: &ensp;</label>
-				<input type="file" id="source-folder" webkitdirectory directory multiple/> <br><br>
+				<input type="file" id="rule" name="rule" webkitdirectory directory multiple/> 
+				<input type="text" id="ruletext" name="ruletext"/> <br><br>
 				<label for="source-path">Source Path: &ensp;</label>
-				<input type="file" webkitdirectory directory multiple><br><br>
+				<input type="file" id="source" name="source" webkitdirectory directory multiple><br><br>
+				<input type="text" id="sourcetext" name="sourcetext"/> <br><br>
 				<label for="destination">Destination Folder: &ensp;</label>
-				<input type="file" webkitdirectory directory multiple> <br><br><br>
+				<input type="file" id="dest" name="dest" webkitdirectory directory multiple> 
+				<input type="text" id="desttext" name="desttext"/> <br><br><br><br><br><br><br>
 
 				<button type="submit" name="submit">Add This Item</button> <br><br><br><br><br><br><br><br><br><br><br><br>
 
