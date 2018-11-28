@@ -131,18 +131,26 @@
 					<label for="software">Select a Software Type: &ensp;</label>
 					<select id="software" name="software">
 						<option selected disabled>Select a Software Type</option>
-						<option>MasterCam</option>
-						<option>NX</option>
-						<option>Partmaker</option>
-						<option>NCSimul</option>
-						<option>Logs</option>
+						<?php
+							$db = dbConnect();
+							$sql = "SELECT name FROM software";
+							$result = SendSQLCMD($db, $sql);
+							while($row = mysqli_fetch_array($result)) {
+		                        echo "<option value=\"" . $row[0] ."\">" .  htmlspecialchars($row[0]) . "</option>";
+		                    }
+						?>
 					</select><br><br>
 					<label for="machinetype">Select a Machine Type: &ensp;</label>
 					<select id="machinetype" name="machinetype">
 						<option selected disabled>Select a Machine Type</option>
-						<option>Mill</option>
-						<option>Lathe</option>
-						<option>Wire</option>
+						<?php
+							$db = dbConnect();
+							$sql = "SELECT type FROM machine";
+							$result = SendSQLCMD($db, $sql);
+							while($row = mysqli_fetch_array($result)) {
+		                        echo "<option value=\"" . $row[0] ."\">" .  htmlspecialchars($row[0]) . "</option>";
+		                    }
+						?>
 					</select><br><br>
 					
 					<label for="source-folder">File Folder or Rule: &ensp;</label>
