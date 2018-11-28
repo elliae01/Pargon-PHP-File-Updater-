@@ -3,6 +3,29 @@
 <?php
 	require_once('../includes/dbHelper.php');
 	
+	function saveValues($fieldName){
+        if(isset($_POST[$fieldName])){
+            echo htmlspecialchars($_POST[$fieldName]);
+        }
+        else{
+            echo "" ;
+        }
+    }
+    
+    function saveSelected($fieldName){
+        if( isset($_POST["software"]) || isset($_POST['machinetype']) ) {
+            if( ($_POST["software"] == $fieldName) || ($_POST["machinetype"] == $fieldName) ){
+                return "selected=\"selected\"";
+            }
+            else{
+                return "";
+            }
+        }
+        else{
+            return "";
+        }
+    }
+	
 	
 	function addItem(){
 		if(checkRule() &&
@@ -136,7 +159,9 @@
 							$sql = "SELECT name FROM software";
 							$result = SendSQLCMD($db, $sql);
 							while($row = mysqli_fetch_array($result)) {
-		                        echo "<option value=\"" . $row[0] ."\">" .  htmlspecialchars($row[0]) . "</option>";
+								$isSelected = saveSelected($row[0]);
+								echo $isSelected;
+		                        echo "<option value=\"" . $row[0] ."\" $isSelected>" .  htmlspecialchars($row[0]) . "</option>";
 		                    }
 						?>
 					</select><br><br>
@@ -148,7 +173,8 @@
 							$sql = "SELECT type FROM machine";
 							$result = SendSQLCMD($db, $sql);
 							while($row = mysqli_fetch_array($result)) {
-		                        echo "<option value=\"" . $row[0] ."\">" .  htmlspecialchars($row[0]) . "</option>";
+								$isSelected = saveSelected($row[0]);
+		                        echo "<option value=\"" . $row[0] ."\" " . saveSelected($row[0]) .  ">" .  htmlspecialchars($row[0]) . "</option>";
 		                    }
 						?>
 					</select><br><br>
@@ -156,16 +182,16 @@
 					<label for="source-folder">File Folder or Rule: &ensp;</label>
 					<input type="button" value="Get Ext" onclick="getExt()">
 					<input type="file" id="rule" name="rule" onchange="changeText()" /><br>
-					<input type="text" id="ruletext" name="ruletext"/> <br><br>
+					<input type="text" id="ruletext" name="ruletext" value="<?php saveValues("ruletext"); ?>" /> <br><br>
 					
 					<label for="source-path">Source Path: &ensp;</label><br>
-					<input type="text" id="sourcetext" name="sourcetext"/> <br><br>
+					<input type="text" id="sourcetext" name="sourcetext" value="<?php saveValues("sourcetext"); ?>"/> <br><br>
 					
 					<label for="destination">Destination Folder: &ensp;</label><br>
-					<input type="text" id="desttext" name="desttext"/> <br><br><br>
+					<input type="text" id="desttext" name="desttext" value="<?php saveValues("desttext"); ?>"/> <br><br><br>
 					
 					<label for="comments">Comments: &ensp;</label><br>
-					<textarea rows="5" cols="70" name="comments" id="comments">Enter Comments Here </textarea><br><br><br><br><br><br><br>
+					<textarea rows="5" cols="70" name="comments" id="comments"><?php saveValues("comments"); ?></textarea><br><br><br><br><br><br><br>
 	
 					<button type="submit" name="submit">Add This Item</button> <br><br><br><br><br><br><br><br><br><br><br><br>
 				</form>
