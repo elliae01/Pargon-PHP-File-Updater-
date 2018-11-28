@@ -19,19 +19,12 @@
     define("USER", "cs372");
     define("PASS", "pfw");
 
-    if ($_GET["cancel"]=="selected"){
-        
-        header("Location: ../FileControl.html");
-        
-    }
-
     // else if username and password were submitted, grab them instead
     if (isset($_POST["user"]) && isset($_POST["pass"]))
     {
         // if username and password are valid, log user in
         if ($_POST["user"] == USER && $_POST["pass"] == PASS)
         {
-            
             // remember that user's logged in
             $_SESSION["authenticated"] = true;
             

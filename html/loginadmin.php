@@ -44,7 +44,7 @@
 </script>
 <body>
 	
-	<?php include '../php/login.php';?>
+	<?php $error1=""; include '../php/login.php';?>
 	
 	<div class = "container">
 	<div id="centerpage" style="width: 60%">
