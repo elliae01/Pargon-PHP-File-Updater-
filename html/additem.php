@@ -38,6 +38,16 @@
 			$dest = $_POST['desttext'];
 			$comment = $_POST['comments'];
 			$db = dbConnect();
+			$sql = 'SELECT id FROM software WHERE name=\'' .mysqli_real_escape_string($db, $soft) . '\'';
+			if($result = SendSQLCMD($db, $sql)){
+				$row = mysqli_fetch_array($result);
+				$soft = $row[0];
+			}
+			$sql = 'SELECT id FROM machine WHERE type=\'' . mysqli_real_escape_string($db, $machine) . '\'';
+			if($result = SendSQLCMD($db, $sql)){
+				$row = mysqli_fetch_array($result);
+				$machine = $row[0];
+			}
 			$sql = 'INSERT INTO controlled_item(software, machine_type, file_rule, source_folder, destination_folder, notes ) VALUES(\'' . mysqli_real_escape_string($db, $soft) .'\', \'' . mysqli_real_escape_string($db, $machine) .'\', \''. mysqli_real_escape_string($db, $rule) . '\', \'' . mysqli_real_escape_string($db, $source) .'\', \'' . mysqli_real_escape_string($db, $dest) .'\', \'' . mysqli_real_escape_string($db, $comment) . '\')';
 			SendSQLCMD($db, $sql);
 		}
