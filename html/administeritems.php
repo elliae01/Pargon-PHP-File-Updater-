@@ -29,9 +29,9 @@
 		<img src="../../images/nninc.jpg" alt="Paragons Logo" class="center"></img>
 			<section class="logo">Administer List of Controlled Items</section>
 			<nav>         
-				<a href="../html/portal.html">Return to Portal</a>
-				<a href="../html/additem.php">Add new Item</a>
-				<a href="../html/reviewItems.html">Review Item</a>
+				<a href="../../html/portal.php">Return to Portal</a>
+				<a href="../../html/additem.php">Add new Item</a>
+				<a href="../../html/reviewItems.php">Review Item</a>
 			</nav>
 		</header>
 		
