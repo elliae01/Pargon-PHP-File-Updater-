@@ -12,7 +12,8 @@
 			margin: 50px; }
 		#main_page {
 			margin-bottom: 50px;
-			padding-left: 165px;
+			margin-left: auto; margin-right: auto;
+			text-align: center;
 			}
 		#main_page2{
 			float: right;
@@ -59,7 +60,7 @@
 				 
 				  
 					<h1 id="main_page">
-						<fieldset style="width:200px;border-color:blue;border-style:inset;
+						<fieldset id="main_page" style="width:250px;border-color:blue;border-style:inset;
 							background-color:  #F0F8FF;">
     						<legend>Password Reset</legend>
     						<br>
@@ -68,9 +69,9 @@
     						<font size="3px" color="blue">Email</font>
     						<br>
     						<input type="text" id="email" placeholder="Enter email" 
-    						style="padding:12px 20px;margin-bottom:5px"><br>
-    						<button type="next" id="next1" onclick="reset()" style="padding:7px 45px;">Next</button>
-    						<button type="button" id="cancel1" onclick="location.href='loginadmin.php'" style="padding:7px 20px">Cancel</button>
+    						style="padding:12px 25px;margin-bottom:5px"><br>
+    						<button type="next" id="next1" onclick="reset()" style="padding:7px 40px;">Next</button>
+    						<button type="button" id="cancel1" onclick="location.href='loginadmin.php'" style="padding:7px 17px">Cancel</button>
     						<br><br><br><br>
 					</fieldset>
 					</h1>

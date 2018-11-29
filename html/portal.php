@@ -34,12 +34,15 @@
 			<section class="logo">Controlled Files: Portal</section> <!--Rename class="title"?-->
 			<!--What should be here? PageName? -->
 			<nav>
+				<center>
 				<a href="./pcuserlist.php">PC User List</a>
 				<a href="./reviewItems.php">Review Controlled Items</a>
 				<a href="./administeritems.php">Administer List of Controlled Items</a>
 				<a href="./logs.php">Log List</a>
 				<a href="./options.php">Options</a>
 				<a href="../php/loginSession.php">Logout</a> <!--style="float:right"-->
+				<a href="./newUser.php">New User</a>
+				</center>
 			</nav>
 		</header>
 

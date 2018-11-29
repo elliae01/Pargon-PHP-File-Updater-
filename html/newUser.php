@@ -11,7 +11,7 @@
 		body {
 			margin: 50px; }
 		#main_page {
-			margin-bottom: 50px;
+			margin-bottom: 20px;
 			margin-left: auto; margin-right: auto;
 			text-align: center;
 			}
@@ -27,28 +27,17 @@
 
 <script>
 	
-	function reset(){
-		
-		var newPassword = document.getElementById("newPassword").value;
-		var confirmPassword = document.getElementById("confirmPassword").value;
 
-		if(newPassword==confirmPassword){
-			alert("Password successfully updated!")
-			window.location = "loginadmin.php"
-		}
-		else{
-			alert("Passwords do not match!")
-		}
-		
-		
-	}
 </script>
 
 <body>
+    
+    <?php include '../php/addUser.php';?>
+    
 	<div id="centerpage" style="width: 40%">
 		<header class="banner">
 		<img src="../images/nninc.jpg" alt="Paragon's Logo" class="center"></img>
-			<section class="logo">Forgot&#xA0;Password&#xA0;</section>
+			<section class="logo">New User</section>
 			<nav>         
 				<a href="#"></a>
 				<a href="#"></a>
@@ -62,22 +51,39 @@
 				<br>
 				  
 					<h1 id="main_page">
+						<form action="<?php echo htmlspecialchars ($_SERVER["PHP_SELF"]); ?>" method="post">
 						<fieldset id="main_page" style="width:250px;border-color:blue;border-style:inset;
 							background-color:  #F0F8FF;">
-    						<legend>Password Reset</legend>
-    						<br><br>
+    						<legend>Add User</legend>
+    						<font size="3px" color="red"><?php echo $error1;?></font>
+    						<br>
+    						<font size="3px" color="blue">Username</font>
+    						<br>
+    						<input type="text" name="user" value="<?PHP echo $nameInput;?>"
+    						style="padding:12px 20px;margin-bottom:5px">
+    						<br>
+    						<font size="3px" color="blue">Email</font>
+    						<br>
+    						<input type="text" name="newEmail" value="<?PHP echo $emailInput;?>"
+    						style="padding:12px 20px;margin-bottom:5px">
+    						<br>
     						<font size="3px" color="blue">New Password</font>
     						<br>
-    						<input type="text" id="newPassword"
-    						style="padding:12px 20px;margin-bottom:5px"><br>
+    						<input type="password" name="pass"
+    						style="padding:12px 20px;margin-bottom:5px">
+    						<br>
     						<font size="3px" color="blue">Confirm Password</font>
     						<br>
-    						<input type="text" id="confirmPassword"
-    						style="padding:12px 20px;margin-bottom:5px"><br>
-    						<button type="reset" id="reset1" onclick="reset()" style="padding:7px 40px;">Reset</button>
-    						<button type="button" id="cancel1" onclick="location.href='loginadmin.php'" style="padding:7px 10px">Cancel</button>
-    						<br><br><br><br>
+    						<input type="password" name="pass2"
+    						style="padding:12px 20px;margin-bottom:5px">
+    						<br>
+    						<button type="submit" id="reset1" style="padding:7px 40px;">Enter</button>
+    						<button type="button" id="cancel1" onclick="location.href='portal.php'" style="padding:7px 10px">Cancel</button>
+    						<br><br><br>
+    					
 					</fieldset>
+					
+					</form>
 					</h1>
 						
 

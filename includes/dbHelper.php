@@ -1,15 +1,18 @@
 <?php
-   define('DB_SERVER', 'localhost');
-   define('DB_USERNAME', 'cs372');
-   define('DB_PASSWORD', 'pfw');
-   define('DB_DATABASE', 'database');
+
    
    function dbConnect()
    {
-       $db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
+   
+       define('DB_SERVER', 'localhost');
+       define('DB_USERNAME', 'cs372');
+       define('DB_PASSWORD', 'pfw');
+       define('DB_DATABASE', 'database');
+       
+       $db = mysqli_connect('localhost',DB_USERNAME,DB_PASSWORD,DB_DATABASE);
        // or this 
-       //$db = new mysqli(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
-       if (mysqli_connect_errno())
+       //$db = new mysqli('localhost',DB_USERNAME,DB_PASSWORD,DB_DATABASE);
+       if (mysqli_connect_error())
           {
             echo "Failed to connect to MySQL: " . mysqli_connect_error();
             return false;

@@ -1,5 +1,6 @@
 <?php
 
+    include '../includes/dbHelper.php';
     
     // enable sessions
     //session_start();
@@ -10,20 +11,25 @@
         session_destroy();
         $_SESSION["authenticated"] == false;
     }
-    
-    
-    
-    //setcookie("pass", "", time()-3600);
 
     // were this not a demo, these would be in some database
     define("USER", "cs372");
     define("PASS", "pfw");
+    
+    $connection = dbConnect();
+    
+    $sql = sprintf("SELECT `Username`,`Password` FROM `user_and_password` WHERE `Username` = '%s' AND `Password` = '%s';",
+            $connection->real_escape_string($_POST["user"]),
+            $connection->real_escape_string($_POST["pass"]));
+            
+    // execute query
+    $result = $connection->query($sql) or die(mysqli_error($connection));
 
     // else if username and password were submitted, grab them instead
     if (isset($_POST["user"]) && isset($_POST["pass"]))
     {
         // if username and password are valid, log user in
-        if ($_POST["user"] == USER && $_POST["pass"] == PASS)
+        if ($_POST["user"] == USER && $_POST["pass"] == PASS || $result->num_rows == 1)
         {
             // remember that user's logged in
             $_SESSION["authenticated"] = true;

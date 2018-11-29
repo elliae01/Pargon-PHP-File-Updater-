@@ -115,7 +115,7 @@
 			
 			<bottom id="main_page2">
 				<font size="2px" color="blue" style="font-weight: normal"> Forgot 
-				<a href="forgotPassword.html"> password?</a></font>	
+				<a href="forgotPassword.php"> password?</a></font>	
 			</bottom>
 		</section>
 		
