@@ -36,7 +36,6 @@
 			<nav>
 				<center>
 				<a href="./pcuserlist.php">PC User List</a>
-				<a href="./reviewItems.php">Review Controlled Items</a>
 				<a href="./administeritems.php">Administer List of Controlled Items</a>
 				<a href="./logs.php">Log List</a>
 				<a href="./options.php">Options</a>
