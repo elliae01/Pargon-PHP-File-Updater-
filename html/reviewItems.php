@@ -1,3 +1,13 @@
+<?php
+	if (isset($_GET['dbIndex']))
+		$dbIndex=$_GET['dbIndex'];
+	else
+		$dbIndex=0;
+
+	require_once('../includes/dbHelper.php');
+    $db=dbConnect();
+
+?>
 <!DOCTYPE html>
 <!-- This example is based on the examle in "Dynamic Web Programming and HTML5" by Paul S. Wang -->
 
@@ -27,7 +37,7 @@
 		<img src="../images/nninc.jpg" alt="Paragon's Logo" class="center"></img>
 			<section class="logo">Review Controlled items</section>
 			<nav>         
-				<a href="./portal.php">Return to Portal</a>
+				<a href="./administeritems.php">Return to Full List</a>
 				<a href="./setsource.php">Set Source Destination</a>
 			</nav>
 		</header>
@@ -36,7 +46,13 @@
 			<!-- Main Content Begin -->
 			<article>
 			<h1 id="main">Details</h1>
-			<table>
+			<?php
+				$sql="select c.id, s.name as Software, m.type as 'Machine Type', c.File_rule as 'File, Folder, or Rule', c.Source_folder as 'Source Folder', c.Destination_folder as 'Destination Folder', c.Notes from software s  join machine m  join controlled_item c where c.Software=s.id and m.id=c.Machine_Type and c.id=$dbIndex";
+				DisplayDBasTable($db,$sql,True);
+				$db->close();
+				unset($db);
+			?>
+<!--			<table>
 				<tr>
 					<th>MasterCam</th>
 					<td>Mill</td>
@@ -45,7 +61,7 @@
 					<td>C:\Users\Public\Documents\shared Mcam2019\mill\Posts</td>
 				</tr>
 			</table>
-
+-->
 			</article>
 			<!-- Main Content End -->
 			<!-- Right Box Begin-->

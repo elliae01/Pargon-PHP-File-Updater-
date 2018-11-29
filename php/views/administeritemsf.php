@@ -1,5 +1,5 @@
 <?php
-	require_once('../includes/dbHelper.php');
+	require_once('../../includes/dbHelper.php');
    $db=dbConnect();
 
 ?>
@@ -10,9 +10,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Controlled Items Administer Items</title>
-	<link rel="stylesheet" href="../css/floatlayout.css" 
+	<link rel="stylesheet" href="../../css/floatlayout.css" 
 		type="text/css" title="float layout style">
-	<script type="text/javascript" src="../js/administeritems.js"></script>
+	<script type="text/javascript" src="../../js/administeritems.js"></script>
 	<style type="text/css">
 		body {
 			margin: 50px; }
@@ -23,22 +23,22 @@
 	</style>
 </head>
 
-<body onload="init()">
+<body>
 	<div id="centerpage">
 		<header class="banner">
-<!--		<img src="../../images/nninc.jpg" alt="Paragons Logo" class="center"></img> -->
-		<?php require('../php/views/templates/logo.php'); ?>
-		<section class="logo">Administer List of Controlled Items</section>
+		<img src="../../images/nninc.jpg" alt="Paragons Logo" class="center"></img>
+			<section class="logo">Administer List of Controlled Items</section>
 			<nav>         
-				<a href="../html/portal.php">Return to Portal</a>
-				<a href="../html/additem.php">Add new Item</a>
+				<a href="../../html/portal.html">Return to Portal</a>
+				<a href="../../html/additem.html">Add new Item</a>
+				<a href="../../html/reviewItems.html">Review Item</a>
 			</nav>
 		</header>
 		
 		<section id="main">
 			<!-- Main Content Begin -->
 			<article>
-			<h1 id="main">Controlled File List - Select an Item below to review it.</h1>
+			<h1 id="main">Controlled File List</h1>
 			Filter by software:
 			<select name="software">
 				<option>All Items</option>
@@ -57,21 +57,18 @@
 			</select>
 			
 			<?php
-				$sql="select c.id, s.name as Software, m.type as 'Machine Type', c.File_rule as 'File, Folder, or Rule', c.Source_folder as 'Source Folder', c.Destination_folder as 'Destination Folder', c.Notes from software s  join machine m  join controlled_item c where c.Software=s.id and m.id=c.Machine_Type";
-				DisplayDBasTable($db,$sql,True);
+				$sql="select s.name as Software, m.type as 'Machine Type', c.File_rule as 'File, Folder, or Rule', c.Source_folder as 'Source Folder', c.Destination_folder as 'Destination Folder', c.Notes from software s  join machine m  join controlled_item c where c.Software=s.id and m.id=c.Machine_Type";
+				DisplayDBasTable($db,$sql,false);
 				$db->close();
 				unset($db);
 			?>
-<!--			<table>
-				<script src="../../js/admintable.js"></script>
-			</table>
--->			</article>
+			</article>
 			<!-- Main Content End -->
 			<!-- Right Box Begin-->
 
 			<aside>
 				<h1>Reference Links</h1>
-				<embed  id="mysidebar" src="../html/sidebar.html">
+				<embed  id="mysidebar" src="../../html/sidebar.html">
 			</aside>
 			<!-- Right Box End-->
 

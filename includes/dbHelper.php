@@ -1,17 +1,14 @@
 <?php
-
+   define('DB_SERVER', 'localhost');
+   define('DB_USERNAME', 'cs372');
+   define('DB_PASSWORD', 'pfw');
+   define('DB_DATABASE', 'database');
    
    function dbConnect()
    {
-   
-       define('DB_SERVER', 'localhost');
-       define('DB_USERNAME', 'cs372');
-       define('DB_PASSWORD', 'pfw');
-       define('DB_DATABASE', 'database');
-       
-       $db = mysqli_connect('localhost',DB_USERNAME,DB_PASSWORD,DB_DATABASE);
+       $db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
        // or this 
-       //$db = new mysqli('localhost',DB_USERNAME,DB_PASSWORD,DB_DATABASE);
+       //$db = new mysqli(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
        if (mysqli_connect_error())
           {
             echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -36,6 +33,14 @@
        return $result;
     };
 
+    function debug_to_console( $data ) {
+        $output = $data;
+        if ( is_array( $output ) )
+            $output = implode( ',', $output);
+    
+        echo "<script>console.log( 'Debug Objects: " . $output . "' );</script>";
+    };
+
     function DisplayDBasTable($db, $sql, $showID)
     {
         /*
@@ -47,7 +52,9 @@
     	$result = $db->query($sql);
         //echo $sql . '<br>';
     	echo "<table border='1'>";
+    	$rowCounter=0;
     	while ($row = $result->fetch_assoc()){
+    	    $rowCounter++;
             if ($showHeader) 
             {
         		echo "<tr onclick='myFolderFunction(this)'>";
@@ -61,11 +68,10 @@
         		echo "</tr>";
                 $showHeader=false;
             };
-                    echo (string)$row['id'];
-                    echo strval($row['id']);
-            echo "Alert((string)$row[0])";
-    	    echo "<tr";
-                if($row['id'] % 2 == 0){ 
+                reset($row);
+               debug_to_console($rowCounter);
+    	        echo "<tr";
+                if($rowCounter%2 > 0){ 
                     echo " class='even'";
                 } 
                 else{ 
