@@ -1,10 +1,12 @@
 <?php
+	include '../php/login.php';
+	require_once('../includes/dbHelper.php');
+
 	if (isset($_GET['dbIndex']))
 		$dbIndex=$_GET['dbIndex'];
 	else
 		$dbIndex=0;
 
-	require_once('../includes/dbHelper.php');
     $db=dbConnect();
 
 ?>
@@ -29,7 +31,7 @@
 
 <body>
 	
-<?php include '../php/login.php';?>
+
 <?php if($_SESSION["authenticated"] == true):?>
 
 	<div id="centerpage">
