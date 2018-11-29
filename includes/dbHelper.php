@@ -50,7 +50,7 @@
     	while ($row = $result->fetch_assoc()){
             if ($showHeader) 
             {
-        		echo "<tr>";
+        		echo "<tr onclick='myFolderFunction(this)'>";
         	        foreach ($row as $key => $value)
         	        {
             			if (($showID) || ($key!='id'))
@@ -61,7 +61,17 @@
         		echo "</tr>";
                 $showHeader=false;
             };
-    	    echo "<tr>";
+                    echo (string)$row['id'];
+                    echo strval($row['id']);
+            echo "Alert((string)$row[0])";
+    	    echo "<tr";
+                if($row['id'] % 2 == 0){ 
+                    echo " class='even'";
+                } 
+                else{ 
+                    
+                } ;    	
+                echo " onclick='myFolderFunction(this)'>";
     	        foreach ($row as $key => $value)
     	        {
           			if (($showID) || ($key!='id'))
