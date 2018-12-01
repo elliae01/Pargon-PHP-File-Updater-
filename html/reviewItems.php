@@ -1,13 +1,11 @@
 <?php
-	include '../php/login.php';
-	require_once('../includes/dbHelper.php');
+	//require_once('../includes/dbHelper.php');
 
 	if (isset($_GET['dbIndex']))
 		$dbIndex=$_GET['dbIndex'];
 	else
 		$dbIndex=0;
 
-    $db=dbConnect();
 
 ?>
 <!DOCTYPE html>
@@ -23,7 +21,7 @@
 		body {
 			margin: 50px; }
 		#main_page {
-			margin-bottom: 160px; }
+			margin-bottom: 16px; }
 		#clear {
 			clear: both; }
 	</style>
@@ -32,7 +30,10 @@
 <body>
 	
 
-<?php if($_SESSION["authenticated"] == true):?>
+<?php include '../php/login.php';?>
+<?php if($_SESSION["authenticated"] == true):
+    $db=dbConnect();
+?>
 
 	<div id="centerpage">
 		<header class="banner">
