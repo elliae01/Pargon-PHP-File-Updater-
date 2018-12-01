@@ -1,5 +1,6 @@
 
 <?php
+
 /**
  * PHPMailer - PHP email creation and transport class.
  * PHP Version 5.5.
@@ -16,7 +17,7 @@
  * @license   http://www.gnu.org/copyleft/lesser.html GNU Lesser General Public License
  * @note      This program is distributed in the hope that it will be useful - WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
- * FITNESS FOR A PARTICULAR PURPOSE.
+ * FITNESS FOR A PARTICULAR PURPSE.
  */
 namespace PHPMailer\PHPMailer;
 /**

@@ -6,7 +6,6 @@ include '../includes/dbHelper.php';
     
     $newEmail = $_POST['newEmail'];
     $user = $_POST['user'];
-    
     $emailInput = $newEmail;
     $nameInput = $user;
 
@@ -28,6 +27,9 @@ include '../includes/dbHelper.php';
             // execute query
             $alterTable = $connection->query($alter);
             
+            $alter2 = "ALTER TABLE user_and_password MODIFY Password VARCHAR(255);";
+            $alterTable2 = $connection->query($alter2);
+            
             $sql = sprintf("Select 1 FROM user_and_password WHERE Username = '%s'",
                       $connection->real_escape_string($_POST["user"]));
             
@@ -42,9 +44,10 @@ include '../includes/dbHelper.php';
             else
             {
                 
+                $password_hash = password_hash($_POST["pass"], PASSWORD_DEFAULT);
                 $sql = sprintf("INSERT INTO `user_and_password`(`Username`, `Password`, `Email`) VALUES ('%s','%s', '%s')",
                            $connection->real_escape_string($_POST["user"]),
-                           $connection->real_escape_string($_POST["pass"]),
+                           $connection->real_escape_string($password_hash),
                            $connection->real_escape_string($_POST["newEmail"]));
                 
                 // execute query

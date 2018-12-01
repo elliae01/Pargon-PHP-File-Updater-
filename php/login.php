@@ -18,18 +18,25 @@
     
     $connection = dbConnect();
     
-    $sql = sprintf("SELECT `Username`,`Password` FROM `user_and_password` WHERE `Username` = '%s' AND `Password` = '%s';",
-            $connection->real_escape_string($_POST["user"]),
-            $connection->real_escape_string($_POST["pass"]));
-            
+    $sql = sprintf("SELECT `Username`,`Password` FROM `user_and_password` WHERE `Username` = '%s';",
+            $connection->real_escape_string($_POST["user"]));
+            //$connection->real_escape_string($_POST["pass"]));
+    
     // execute query
     $result = $connection->query($sql) or die(mysqli_error($connection));
+    
+    $row = mysqli_fetch_array($result);
+    
+    $password_string = $_POST["pass"];
+    $password_hash = $row[1];
+
 
     // else if username and password were submitted, grab them instead
     if (isset($_POST["user"]) && isset($_POST["pass"]))
     {
         // if username and password are valid, log user in
-        if ($_POST["user"] == USER && $_POST["pass"] == PASS || $result->num_rows == 1)
+        if ($_POST["user"] == USER && $_POST["pass"] == PASS || 
+        password_verify($password_string, $password_hash))
         {
             // remember that user's logged in
             $_SESSION["authenticated"] = true;
