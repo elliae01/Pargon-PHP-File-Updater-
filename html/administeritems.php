@@ -1,6 +1,5 @@
 <?php
-	require_once('../includes/dbHelper.php');
-   $db=dbConnect();
+	//require_once('../includes/dbHelper.php');
 
 ?>
 <!DOCTYPE html>
@@ -12,7 +11,11 @@
 	<title>Controlled Items Administer Items</title>
 	<link rel="stylesheet" href="../css/floatlayout.css" 
 		type="text/css" title="float layout style">
-	<script type="text/javascript" src="../js/administeritems.js"></script>
+	<!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../bootstrap/bootstrap.min.css" 
+	    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
+	    crossorigin="anonymous">
+		<script type="text/javascript" src="../js/administeritems.js"></script>
 	<style type="text/css">
 		body {
 			margin: 50px; }
@@ -24,6 +27,10 @@
 </head>
 
 <body onload="init()">
+<?php include '../php/login.php';?>
+<?php if($_SESSION["authenticated"] == true):
+    $db=dbConnect();?>
+
 	<div id="centerpage">
 		<header class="banner">
 <!--		<img src="../../images/nninc.jpg" alt="Paragons Logo" class="center"></img> -->
@@ -82,6 +89,11 @@
 	<footer>
 		<p style="text-align: center;"></p>
 	</footer>
+<?php else : ?>
+	<font size="10px" color="red">Access Denied!</font><br><br>
+	<font size="4px" color="blue">Click here to </font>
+	<a href="../php/loginSession.php">Login</a>
+<?php endif; ?>
 	
 </body>
 </html>
