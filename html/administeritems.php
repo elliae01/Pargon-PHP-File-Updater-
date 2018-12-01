@@ -11,11 +11,6 @@
 	<title>Controlled Items Administer Items</title>
 	<link rel="stylesheet" href="../css/floatlayout.css" 
 		type="text/css" title="float layout style">
-	<!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../bootstrap/bootstrap.min.css" 
-	    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
-	    crossorigin="anonymous">
-		<script type="text/javascript" src="../js/administeritems.js"></script>
 	<style type="text/css">
 		body {
 			margin: 50px; }
