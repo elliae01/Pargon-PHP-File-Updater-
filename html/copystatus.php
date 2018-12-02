@@ -18,8 +18,6 @@
 </head>
 
 <body>
-	 <?php include '../php/login.php';?>
-	 <?php if($_SESSION["authenticated"] == true):?>
 	<div id="centerpage">
 		<header class="banner">
 		<img src="../images/nninc.jpg" alt="Paragon's Logo" class="center"></img>
@@ -54,10 +52,6 @@
 	<footer>
 		<p style="text-align: center;"></p>
 	</footer>
-	<?php else : ?>
-	<font size="10px" color="red">Access Denied!</font><br><br>
-	<font size="4px" color="blue">Click here to </font>
-	<a href="../php/loginSession.php">Login</a>
-	<?php endif; ?>
+
 </body>
 </html>
