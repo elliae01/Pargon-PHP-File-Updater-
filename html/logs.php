@@ -25,8 +25,9 @@
 <body>
 	
 <?php include '../php/login.php';?>
-<?php if($_SESSION["authenticated"] == true):?>
-
+<?php if($_SESSION["authenticated"] == true):
+	$db=dbConnect();?>
+	
 	<div id="centerpage">
 		<header class="banner">
 			<img src="../images/nninc.jpg" alt="Paragon's Logo" class="center"></img>
@@ -41,6 +42,15 @@
 			<article>
 				<h1 id="main">Available Logs</h1>
 				<!--There seems to be a styling thing forcing this down-->
+				
+				<?php
+					$sql="SELECT DISTINCT LogID, Time FROM logs GROUP BY LogID;";
+					DisplayDBasTable($db,$sql,False);
+					$db->close();
+					unset($db);
+				?>
+				
+				<!--
 				<table>
 					<tr class="head">
 						<th>Log</th>
@@ -48,10 +58,6 @@
 						<th>Errors</th>
 						<th>Warnings</th>
 					</tr>
-					<!--Links can be done via bootstrap
-				class='clickable-row' data-href='url://'
-				or in row as below
-				the issue is it makes the text the link, not the box-->
 					<tr>
 						<th><a href="#">Log 1</th>
 						<th><a href="#">10/8/2018</th>
@@ -77,7 +83,7 @@
 						<th>0</th>
 					</tr>
 				</table>
-			
+				-->
 			</article>
 			<!-- Main Content End -->
 			<!-- Right Box Begin-->
