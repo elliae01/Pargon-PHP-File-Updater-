@@ -38,7 +38,7 @@
 			$dest = $_POST['desttext'];
 			$comment = $_POST['comments'];
 			$db = dbConnect();
-			$sql = 'SELECT id FROM software WHERE name=\'' .mysqli_real_escape_string($db, $soft) . '\'';
+			$sql = 'SELECT id FROM software WHERE name=\'' . mysqli_real_escape_string($db, $soft) . '\'';
 			if($result = SendSQLCMD($db, $sql)){
 				$row = mysqli_fetch_array($result);
 				$soft = $row[0];
@@ -49,13 +49,23 @@
 				$machine = $row[0];
 			}
 			$sql = 'INSERT INTO controlled_item(software, machine_type, file_rule, source_folder, destination_folder, notes ) VALUES(\'' . mysqli_real_escape_string($db, $soft) .'\', \'' . mysqli_real_escape_string($db, $machine) .'\', \''. mysqli_real_escape_string($db, $rule) . '\', \'' . mysqli_real_escape_string($db, $source) .'\', \'' . mysqli_real_escape_string($db, $dest) .'\', \'' . mysqli_real_escape_string($db, $comment) . '\')';
-			SendSQLCMD($db, $sql);
+			$result = SendSQLCMD($db, $sql);
+			if($result){
+				echo "Item added sucessfully";
+			}
 		}
 		else{
 			echo "<h1 style=color:#f00>You must completely fill out the form!</h1><br/>";
 		}
 	}
 	
+	function getIP(){
+		$ip = isset($_SERVER['HTTP_CLIENT_IP'])?$_SERVER['HTTP_CLIENT_IP']:isset($_SERVER['HTTP_X_FORWARDED_FOR'])?$_SERVER['HTTP_X_FORWARDED_FOR']:$_SERVER['REMOTE_ADDR'];
+		return $ip;
+	}
+	
+	
+	echo 'My username is ' . phpversion() . '!';
 	
 	function checkRule(){
 		if(isset($_POST["ruletext"])){
