@@ -31,8 +31,13 @@
 </script>
 
 <body>
+<?php include '../php/addUser.php';?>	
+<?php include '../php/login.php';?>
+<?php if($_SESSION["authenticated"] == true):
+    $db=dbConnect();
+?>
     
-    <?php include '../php/addUser.php';?>
+    
     
 	<div id="centerpage" style="width: 40%">
 		<header class="banner">
@@ -82,7 +87,7 @@
     						<br><br><br>
     					
 					</fieldset>
-					
+					<?PHP echo $message;?>
 					</form>
 					</h1>
 						
@@ -94,6 +99,12 @@
 	<footer>
 		<p style="text-align: center;"></p>
 	</footer>
-	
+
+<?php else : ?>
+	<font size="10px" color="red">Access Denied!</font><br><br>
+	<font size="4px" color="blue">Click here to </font>
+	<a href="../php/loginSession.php">Login</a>
+<?php endif; ?>
+
 </body>
 </html>
