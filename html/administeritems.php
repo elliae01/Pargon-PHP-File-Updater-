@@ -11,6 +11,7 @@
 	<title>Controlled Items Administer Items</title>
 	<link rel="stylesheet" href="../css/floatlayout.css" 
 		type="text/css" title="float layout style">
+	<script type="text/javascript" src="../js/administeritems.js"></script>
 	<style type="text/css">
 		body {
 			margin: 50px; }
