@@ -2,8 +2,24 @@
 
 <?php
 
-include '../includes/dbHelper.php';
-    
+
+   define('DB_SERVER', 'localhost');
+   define('DB_USERNAME', 'cs372');
+   define('DB_PASSWORD', 'pfw');
+   define('DB_DATABASE', 'database');
+   
+   function dbConnect1()
+   {
+       $db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
+       // or this 
+       //$db = new mysqli(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
+       if (mysqli_connect_error())
+          {
+            echo "Failed to connect to MySQL: " . mysqli_connect_error();
+            return false;
+          }
+        return $db;
+   }
     $newEmail = $_POST['newEmail'];
     $user = $_POST['user'];
     $emailInput = $newEmail;
@@ -21,7 +37,7 @@ include '../includes/dbHelper.php';
         }
         else
         {
-            $connection = dbConnect();
+            $connection = dbConnect1();
             
             $alter = "ALTER TABLE user_and_password DROP PRIMARY KEY;";
             // execute query
@@ -60,7 +76,7 @@ include '../includes/dbHelper.php';
                     //ob_start();
                     //echo "User was inserted into DB!\n";
                     
-                    echo "<div style ='font:18px Arial,tahoma,
+                    $message = "<div style ='font:18px Arial,tahoma,
                     sans-serif;color:blue'><center>***User was successfully inserted into DB!***</center></div>\n";
                     
                     //ob_flush();
@@ -69,7 +85,7 @@ include '../includes/dbHelper.php';
                     //var_dump(time_sleep_until(microtime(true)+1));
                     
                     // redirect user
-                    header("Location: ../html/portal.php");
+                    //header("Location: ../html/portal.php");
                     //ob_flush();
             }
            

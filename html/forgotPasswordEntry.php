@@ -48,7 +48,7 @@
 	<div id="centerpage" style="width: 40%">
 		<header class="banner">
 		<img src="../images/nninc.jpg" alt="Paragon's Logo" class="center"></img>
-			<section class="logo">Forgot&#xA0;Password&#xA0;</section>
+			<section class="logo">Change Password</section>
 			<nav>         
 				<a href="#"></a>
 				<a href="#"></a>
@@ -64,18 +64,24 @@
 					<h1 id="main_page">
 						<fieldset id="main_page" style="width:250px;border-color:blue;border-style:inset;
 							background-color:  #F0F8FF;">
-    						<legend>Password Reset</legend>
+    						<legend>Password Update</legend>
     						<br><br>
-    						<font size="3px" color="blue">New Password</font>
+    						font size="3px" color="blue">Username</font>
     						<br>
-    						<input type="text" id="newPassword"
-    						style="padding:12px 20px;margin-bottom:5px"><br>
+    						<input type="password" id="newPassword"
+    						    <font size="3px" color="blue">Current Password</font>
+    						<br>
+    						<input type="password" id="newPassword"
+    							<font size="3px" color="blue">New Password</font>
+    						<br>
+    						<input type="password" id="newPassword"
+    							style="padding:12px 20px;margin-bottom:5px"><br>
     						<font size="3px" color="blue">Confirm Password</font>
     						<br>
     						<input type="text" id="confirmPassword"
-    						style="padding:12px 20px;margin-bottom:5px"><br>
-    						<button type="reset" id="reset1" onclick="reset()" style="padding:7px 40px;">Reset</button>
-    						<button type="button" id="cancel1" onclick="location.href='loginadmin.php'" style="padding:7px 10px">Cancel</button>
+    							style="padding:12px 20px;margin-bottom:5px"><br>
+    						<button type="submit" id="update" style="padding:7px 40px;">Update</button>
+    						<button type="button" id="cancel1" onclick="location.href='portal.php'" style="padding:7px 10px">Cancel</button>
     						<br><br><br><br>
 					</fieldset>
 					</h1>
