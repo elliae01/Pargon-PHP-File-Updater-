@@ -27,7 +27,7 @@
 		$row = mysqli_fetch_array($result);
 		$ree1 = $row[0];
 		
-		$connection = dbConnect();
+		
         $sql = "SELECT destination FROM SetSource
                 ORDER BY id DESC 
                 LIMIT 1";
@@ -35,8 +35,8 @@
 		$row = mysqli_fetch_array($result);
 		$ree2 = $row[0];
 		
-		$connection = dbConnect();
-        $sql = "SELECT id FROM SetSource
+		
+        $sql = "SELECT idref FROM SetSource
                 ORDER BY id DESC 
                 LIMIT 1";
 		$result = $connection->query($sql);
