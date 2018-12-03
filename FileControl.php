@@ -60,6 +60,20 @@
                 <div class="loader" style="align-text:center"></div>
                 <br><br><br><br>
                 <!-- This is where the link to next page goes. Not certain which is supposed to be the next page, though-->
+                <?php 
+                    require_once('./includes/dbHelper.php');
+                    require_once('./includes/helpers.php');
+                    $ip = getIP();
+                	$db = dbConnect();
+                	$sql = 'INSERT INTO computername(IP_wired) VALUES(\'' . $ip . '\')';
+                	$result = SendSQLCMD($db, $sql);
+                	if($result){
+                		
+                	}
+                	else{
+                	    echo 'item not added sucessfully';
+                	}
+                ?>
                 <script>setTimeout(function(){window.location.href='./html/copystatus.php'},10000);</script> <!-- 4000 -->
             
             <!-- Main Content End -->
