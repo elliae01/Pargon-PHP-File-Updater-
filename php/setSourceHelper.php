@@ -61,8 +61,8 @@
         
         $message="Update Success!";
     }
-    else{
-        $message="please set source and destination";
+    else if (!$sourcePath || !$destPath){
+        //$message="please set source and destination";
     }
        
     
