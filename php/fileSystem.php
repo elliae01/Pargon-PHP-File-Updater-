@@ -13,7 +13,7 @@
                 if( is_dir($dirName))
                 {
                     echo "directory: " . $dirName ."<br>";
-                    if($dirName == "test")
+                    if($dirName == "Destination")
                     {
                         $sub_dir_handle = opendir($dirName);
                         while(($sub_dir = readdir($sub_dir_handle)) !== false)
@@ -274,8 +274,7 @@
     }
     
     
-    function removeDir(){
-        $currentDir = getcwd();
+    function removeDir($newPath){
         //will delete the directory
         if(is_dir($new_path)){
             echo "this directory exists: $new_path<br>";

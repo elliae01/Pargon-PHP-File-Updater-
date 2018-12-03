@@ -38,3 +38,14 @@ function changeText(){
     var name = document.getElementById("rule").files[0].name;
     box.value = name;
 }
+
+function GetComputerName()
+{
+    try
+{
+    var network = new ActiveXObject('WScript.Network');
+    // Show a pop up if it works
+    alert(network.computerName);
+}
+catch (e) { }
+}

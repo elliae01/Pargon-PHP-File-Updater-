@@ -9,31 +9,34 @@
 		type="text/css" title="float layout style">
 	<style type="text/css">
 		body {
-			margin: 50px; }
+			margin: 50px; 
+			font-size: 20px;
+		}
 		#main_page {
 			margin-bottom: 10px; }
 		#clear {
-			clear: both; }
-		#currentFiles{
+			clear: both; 
+			
+		}
+		#newFiles{
 			position: relative;
-			float: left;
-			width: 25%;
+			float: right;
+			text-align: center;
 		}
 		#updated{
-			margin: 0px 0px 0px 50px;
-			float: right;
-			width: 25%;
-		}
-		#newItems{
 			position: relative;
-			margin: 20px 0px 0px 500px;
-			width: 50%;
+			float: left;
+			text-align: center;
+			margin: 20px;
 		}
+		
 		h2{
 			color: red;
+			font-size: 2em;
 		}
 		h3{
 			color: blue;
+			font-size: 2em;
 		}
 	</style>
 </head>
@@ -41,82 +44,67 @@
 <body>
 	<div id="centerpage">
 		<header class="banner">
-		<img src="../images/nninc.jpg" alt="Paragon's Logo" class="center"></img>
+			<?php require('../php/views/templates/logo.php'); ?>
 			<section class="logo">File Status</section>
-			<nav>         
-<!--			<a href="#">SiteLink1</a>
-				<a href="#">SiteLink2</a>
-				<a href="#">SiteLink3</a>
-				<a href="#">SiteLink4</a>
--->			</nav>
 		</header>
-		
 		<section id="main">
 			<!-- Main Content Begin -->
 			<article>
 			<h1 id="main_page">Updates today..</h1>
-			<div id="currentFiles">
-				<fieldset>
-					<h1> CURRENT FILES</h1>
-				<?php
-					require_once('../php/fileSystem.php');
-					readDirectory();
-				?>	
-				</fieldset>
-			
-			</div>
 			<div id="updated">
 				<h2> FILES NEEDED </h2>
 				<?php
-				//create the directory
-				$cwd = getcwd();
-				$dir = "test";
-        		if(!is_dir($cwd . "/" . $dir)){
-            		echo "we will create the directory <br>";
-            		mkdir($cwd . "/" . $dir);
-        		}
-        		//create the file that doesn't exist
-        		// using touch we can create a file
-			    if(is_dir ($cwd . "/" .  $dir)){
-			        echo "yes " . $dir . " is a directory<br>";
-			        chdir($cwd. "/" .$dir);
-			        echo "we are now in dir of: " . getcwd()."<br>";
-			    	//check if the example.txt exists
-			        if(!file_exists("example.txt")){
-			            touch("example.txt");
-			        }
-			        if(file_exists("example.txt")){
-			            echo "the file NOW exists";
-			        }
-			    }
+					require_once('../php/fileSystem.php');
+					//create the directory
+					$cwd = getcwd();
+					$dir = "Destination";
+	        		if(!is_dir($cwd . "/" . $dir)){
+	            		echo "we will create the directory <br>";
+	            		mkdir($cwd . "/" . $dir);
+	        		}
+	        		//create the file that doesn't exist
+	        		// using touch we can create a file
+				    if(is_dir ($cwd . "/" .  $dir)){
+				        echo "'". $dir."'" . " is a NEW directory<br>";
+				        
+				        echo "we are now in directory of: " . getcwd()."<br>";
+				        mkdir($cwd."/".$dir."/"."MasterCam");
+				        chdir($cwd. "/" .$dir."/"."MasterCam");
+				    	//check if the example.txt exists
+				        if(!file_exists("test1.txt")){
+				            touch("test1.txt");
+				        }
+				        if(file_exists("test1.txt")){
+				            echo "the file: "."test1.txt"." NOW exists<br>";
+				        }
+				        if(!file_exists("test2.txt")){
+				            touch("test2.txt");
+				        }
+				        if(file_exists("test2.txt")){
+				            echo "the file "."test2.txt"." NOW exists<br>";
+				        }
+				        if(!file_exists("test3.txt")){
+				            touch("test3.txt");
+				        }
+				        if(file_exists("test3.txt")){
+				            echo "the file "."test3.txt"." NOW exists<br>";
+				        }
+				    }
 					
 				?>
 			</div>
-			<div id="newItems">
+			
+			<div id="newFiles">
+				<fieldset>
 				<h3>NEW ITEMS ADDED</h3>
 				<?php
-				readDirectory();
-				removeDir();
+					chdir($cwd."/".$dir."/"."MasterCam");
+					readDirectory();
 				?>
+				</fieldset>
+				
 			</div>
 			
-		   <!--     <table class="table table-bordered">-->
-					<!--<tbody>-->
-					<!--	<?php-->
-		   <!--             	require_once('../includes/dbHelper.php');-->
-		   <!--             	$db = dbConnect();-->
-		   <!--             	$sql = 'SELECT Source_folder, File_rule FROM controlled_item';-->
-					<!--		DisplayDBasTable($db,$sql,false);-->
-					<!--	?>-->
-		   <!--             <tr>-->
-		   <!--                 <td><?php echo $row['id'] ?></td>-->
-		   <!--                 <td><?php echo $row['Source_folder'] . $row['File_rule'] ?></td>-->
-
-		                    <!--<td class="text-center"><a href="download.php?id=<?php echo $row['id'] ?>" class="btn btn-primary">Download</a></td>-->
-		   <!--             </tr>-->
-		                
-     <!--       		</tbody>-->
-     <!--       	</table>-->
 			</article>
 			<!-- Main Content End -->
 			<!-- Right Box Begin-->
