@@ -64,9 +64,6 @@
 		return $ip;
 	}
 	
-	
-	echo 'My username is ' . phpversion() . '!';
-	
 	function checkRule(){
 		if(isset($_POST["ruletext"])){
 			$text = $_POST["ruletext"];
