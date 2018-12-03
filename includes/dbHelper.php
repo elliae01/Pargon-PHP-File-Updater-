@@ -90,4 +90,34 @@
     	echo "</table>";
     	return true;
     };
+    
+    function setSource($sql){
+        
+        $connection = dbConnect();
+		$result = $connection->query($sql);
+		$row = mysqli_fetch_array($result);
+		//echo $row[0];
+		
+		// sql to create table
+        $sql2 = "CREATE TABLE SetSource (
+        id VARCHAR(20) NOT NULL,
+        file VARCHAR(100) NOT NULL,
+        source VARCHAR(100) NOT NULL,
+        destination VARCHAR(100) NOT NULL
+        )";
+        
+        //execute query
+        $result2 = $connection->query($sql2);
+        
+        $sql3 = sprintf("INSERT INTO `SetSource`(`id`, `file`, `source`, `destination`) VALUES ('%s','%s', '%s','%s')",
+                $connection->real_escape_string($row[0]),
+                $connection->real_escape_string($row[3]),
+                $connection->real_escape_string($row[4]),
+                $connection->real_escape_string($row[5]));
+                
+        //execute query
+        $result3 = $connection->query($sql3);
+        
+        
+    }
 ?>

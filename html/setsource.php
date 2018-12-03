@@ -19,9 +19,8 @@
 
 <body>
 	
-<?php include '../php/login.php';?>
-<?php if($_SESSION["authenticated"] == true):?>
-
+	<?php include '../php/setSourceHelper.php';?>
+	
 	<div id="centerpage" style="width: 60%">
 		<header class="banner">
 		<img src="../images/nninc.jpg" alt="Paragon's Logo" class="center"></img>
@@ -34,26 +33,39 @@
 			</nav>
 		</header>
 		
-		<section id="main_page" style="height:425px">
+		<section id="main_page" style="height:440px">
 			
+			<form action="<?php echo htmlspecialchars ($_SERVER["PHP_SELF"]); ?>" method="post">
+				
 			<!-- Main Content Begin -->
 					<br><br>
 					<center><fieldset style="width:200px;border-color:blue;border-style:dotted solid;
 					background-color:  #F0F8FF;">
 						<legend><b><font size="5px" color="blue">File Selected</font></b></legend><br>
-						<input type="text" id="newPassword"
-    						style="padding:12px 130px;margin-bottom:20px" disabled="disabled">
+						
+						
+						
+						
+						<input type="text" name="file" value="<?PHP echo $ree;?>"
+    						style="padding:12px 60px;margin-bottom:20px" disabled="disabled" text-align="center";>
     						</center></fieldset><br><br>
     						
 					<article style="width:870px;overflow-y: visible;">
 						<center>
+							
 						<button type="browse" id="source" style="padding:7px 45px;">Set Source Folder</button>
-    					<input type="text" id="sourcePath"
+    					<input type="text" name="sourcePath" value="<?PHP echo $ree1;?>"
     						style="padding:12px 10px;margin-bottom:5px;width:350px"><br>
+    						
     					<button type="browse" id="dest" style="padding:7px 33px;">Set Destination Folder</button>
-    					<input type="text" id="destPath"
+    					<input type="text" name="destPath" value="<?PHP echo $ree2;?>"
     						style="padding:12px 10px;margin-bottom:5px;width:350px"><br><br>
-    					<button type="update" id="update1" style="padding:15px 93px;">Update</button></center>
+    						
+    					<button type="submit" id="update1" style="padding:15px 93px;">Update</button>
+    					<br><br>
+    					<font size="3px" color="red"><b><?PHP echo $message;?></b></font>
+    					
+    					</center>
     					
 					</article>
 					
@@ -65,6 +77,9 @@
 			<!-- Right Box End-->
 
 			<div id="clear"></div>
+			
+			</form>
+			
 		</section>
 	</div>
 
@@ -72,11 +87,7 @@
 		<p style="text-align: center;"></p>
 	</footer>
 
-<?php else : ?>
-	<font size="10px" color="red">Access Denied!</font><br><br>
-	<font size="4px" color="blue">Click here to </font>
-	<a href="../php/loginSession.php">Login</a>
-<?php endif; ?>
+
 
 </body>
 </html>
