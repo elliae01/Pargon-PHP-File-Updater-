@@ -38,7 +38,7 @@
 	
 	function redirect(){
 		
-		window.location.href = "../FileControl.html"
+		window.location.href = "../FileControl.php"
 	}
 	
 </script>
