@@ -21,13 +21,13 @@
         return $db;
    }
     $newEmail = $_POST['newEmail'];
-    $user = $_POST['user'];
+    $user = $_POST['user1'];
     $emailInput = $newEmail;
     $nameInput = $user;
 
-    if (isset($_POST['user']) && isset($_POST['pass']) && isset($_POST['pass2']))
+    if (isset($_POST['user1']) && isset($_POST['pass']) && isset($_POST['pass2']))
     {
-        if ($_POST['user'] == '')
+        if ($_POST['user1'] == '')
         {
             $error1 = "Username cannot be empty!";
         }
@@ -47,7 +47,7 @@
             $alterTable2 = $connection->query($alter2);
             
             $sql = sprintf("Select 1 FROM user_and_password WHERE Username = '%s'",
-                      $connection->real_escape_string($_POST["user"]));
+                      $connection->real_escape_string($_POST["user1"]));
             
             // execute query
             $result = $connection->query($sql) or die(mysqli_error());           
@@ -62,7 +62,7 @@
                 
                 $password_hash = password_hash($_POST["pass"], PASSWORD_DEFAULT);
                 $sql = sprintf("INSERT INTO `user_and_password`(`Username`, `Password`, `Email`) VALUES ('%s','%s', '%s')",
-                           $connection->real_escape_string($_POST["user"]),
+                           $connection->real_escape_string($_POST["user1"]),
                            $connection->real_escape_string($password_hash),
                            $connection->real_escape_string($_POST["newEmail"]));
                 

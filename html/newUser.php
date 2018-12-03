@@ -31,12 +31,11 @@
 </script>
 
 <body>
-<?php include '../php/addUser.php';?>	
-<?php include '../php/login.php';?>
-<?php if($_SESSION["authenticated"] == true):
+	
+<?php include '../php/login.php'; if($_SESSION["authenticated"] == true):
     $db=dbConnect();
 ?>
-    
+<?php include '../php/addUser.php';?>   
     
     
 	<div id="centerpage" style="width: 40%">
@@ -64,7 +63,7 @@
     						<br>
     						<font size="3px" color="blue">Username</font>
     						<br>
-    						<input type="text" name="user" value="<?PHP echo $nameInput;?>"
+    						<input type="text" name="user1" value="<?PHP echo $nameInput;?>"
     						style="padding:12px 20px;margin-bottom:5px">
     						<br>
     						<font size="3px" color="blue">Email</font>
