@@ -2,8 +2,8 @@
 
     //File System
     
-    //using fopen we can delete all current data and rewrite data instead of appending to the current file
-   function readDirectory($path, $entry, $dirName){
+    //using this function we can read through all of the current directories and their contents
+   function readDirectory(){
         $path = "./";
         if(is_dir($path))
         {
@@ -12,7 +12,7 @@
             {
                 if( is_dir($dirName))
                 {
-                    echo "is directory: " . $dirName ."<br>";
+                    echo "directory: " . $dirName ."<br>";
                     if($dirName == "test")
                     {
                         $sub_dir_handle = opendir($dirName);
@@ -25,14 +25,14 @@
                 }
                 elseif( is_file ($dirName))
                 {
-                    echo "is a file: " . $dirName . "<br>";
+                    echo "file: " . $dirName . "<br>";
                 }
             }
             closedir($dir_handle);
         }
         else
         {
-          echo "is not a directory";
+          echo "not a directory";
         }
     }
    
@@ -264,11 +264,9 @@
     
     //Creating and removing directories
     //creates the new directory
-    function createDir($currentDir, $userInput){
-        $currentDir = getcwd();
-        $currentDir = $cwd;
+    function createDir(){
+        $cwd = getcwd();
         $userInput = $dir;
-        $dir = "user";
         if(!is_dir($cwd . "/" . $dir)){
             echo "we will create the directory <br>";
             mkdir($cwd . "/" . $dir);
@@ -276,7 +274,7 @@
     }
     
     
-    function removeDir($currentDir, $new_path){
+    function removeDir(){
         $currentDir = getcwd();
         //will delete the directory
         if(is_dir($new_path)){

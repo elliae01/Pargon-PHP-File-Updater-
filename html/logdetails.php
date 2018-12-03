@@ -1,3 +1,10 @@
+<?php
+	if (isset($_GET['dbIndex']))
+		$dbIndex=$_GET['dbIndex'];
+	else
+		$dbIndex=0;
+?>
+
 <!DOCTYPE html>
 <!-- This example is based on the examle in "Dynamic Web Programming and HTML5" by Paul S. Wang -->
 
@@ -7,7 +14,6 @@
 	<meta charset="UTF-8">
 	<title>Controlled Items Logs Page</title>
 	<link rel="stylesheet" href="../css/floatlayout.css" type="text/css" title="float layout style">
-	<script type="text/javascript" src="../js/logdetails.js"></script>
 	<style type="text/css">
 		body {
 			margin: 50px;
@@ -23,7 +29,7 @@
 	</style>
 </head>
 
-<body onload="init()">
+<body>
 	
 <?php include '../php/login.php';?>
 <?php if($_SESSION["authenticated"] == true):
@@ -35,6 +41,7 @@
 			<section class="logo">Logs</section>
 			<nav>
 				<a href="./portal.php">Return to Portal</a>
+				<a href="./logs.php">Return to Full Log List</a>
 			</nav>
 		</header>
 
@@ -44,8 +51,8 @@
 				<h1 id="main">Available Logs</h1>
 
 				<?php
-					$sql="SELECT DISTINCT LogID, Time FROM logs GROUP BY LogID;";
-					DisplayDBasTable($db,$sql,False);
+					$sql="SELECT LogID, Time, Computer, IP, User, Action, File, Success FROM logs WHERE LogID='$dbIndex'";
+					DisplayDBasTable($db,$sql,True);
 					$db->close();
 					unset($db);
 				?>
