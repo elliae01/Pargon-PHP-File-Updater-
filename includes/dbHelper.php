@@ -55,7 +55,7 @@
     	$rowCounter=0;
     	while ($row = $result->fetch_assoc()){
     	    $rowCounter++;
-            if ($showHeader) 
+            if ($showHeader)
             {
         		echo "<tr onclick='myFolderFunction(this)'>";
         	        foreach ($row as $key => $value)
@@ -76,7 +76,7 @@
                 } 
                 else{ 
                     
-                } ;    	
+                };
                 echo " onclick='myFolderFunction(this)'>";
     	        foreach ($row as $key => $value)
     	        {

@@ -52,7 +52,7 @@ Sun 09/09/2018 at 14:56:43.12 - IT101348 - kful01 Completed Update from \\NETWOR
 	-->	
 		<br>
 			<?php
-				$sql="select c.id, s.name as Software, m.type as 'Machine Type', c.File_rule as 'File, Folder, or Rule', c.Source_folder as 'Source Folder', c.Destination_folder as 'Destination Folder', c.Notes from software s  join machine m  join controlled_item c where c.Software=s.id and m.id=c.Machine_Type";
+				//$sql="select c.id, s.name as Software, m.type as 'Machine Type', c.File_rule as 'File, Folder, or Rule', c.Source_folder as 'Source Folder', c.Destination_folder as 'Destination Folder', c.Notes from software s  join machine m  join controlled_item c where c.Software=s.id and m.id=c.Machine_Type";
 				$sql="select c.id, c.assetID as 'Computer Name', c.IP_wired, c.IP_wifi, c.username as 'User Name', c.logonserver, c.lastlogon as 'Last Login' from computername c group by c.username;";
 				DisplayDBasTable($db,$sql,False);
 				$db->close();

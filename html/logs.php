@@ -7,6 +7,7 @@
 	<meta charset="UTF-8">
 	<title>Controlled Items Logs Page</title>
 	<link rel="stylesheet" href="../css/floatlayout.css" type="text/css" title="float layout style">
+	<script type="text/javascript" src="../js/logdetails.js"></script>
 	<style type="text/css">
 		body {
 			margin: 50px;
@@ -22,7 +23,7 @@
 	</style>
 </head>
 
-<body>
+<body onload="init()">
 	
 <?php include '../php/login.php';?>
 <?php if($_SESSION["authenticated"] == true):
@@ -41,49 +42,14 @@
 			<!-- Main Content Begin -->
 			<article>
 				<h1 id="main">Available Logs</h1>
-				<!--There seems to be a styling thing forcing this down-->
-				
+
 				<?php
 					$sql="SELECT DISTINCT LogID, Time FROM logs GROUP BY LogID;";
 					DisplayDBasTable($db,$sql,False);
 					$db->close();
 					unset($db);
 				?>
-				
-				<!--
-				<table>
-					<tr class="head">
-						<th>Log</th>
-						<th>Date</th>
-						<th>Errors</th>
-						<th>Warnings</th>
-					</tr>
-					<tr>
-						<th><a href="#">Log 1</th>
-						<th><a href="#">10/8/2018</th>
-						<th>10</th>
-						<th>2</th>
-					</tr>
-					<tr class="even">
-						<th><a href="#">Log 2</th>
-						<th><a href="#">10/9/2018</th>
-						<th>2</th>
-						<th>14</th>
-					</tr>
-					<tr>
-						<th><a href="#">Log 3</th>
-						<th><a href="#">10/12/2018</th>
-						<th>0</th>
-						<th>1</th>
-					</tr>
-					<tr class="even">
-						<th><a href="#">Log 4</th>
-						<th><a href="#">10/17/2018</th>
-						<th>1</th>
-						<th>0</th>
-					</tr>
-				</table>
-				-->
+
 			</article>
 			<!-- Main Content End -->
 			<!-- Right Box Begin-->
