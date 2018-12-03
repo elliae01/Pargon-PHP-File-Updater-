@@ -26,7 +26,8 @@
 <body>
 	
 <?php include '../php/login.php';?>
-<?php if($_SESSION["authenticated"] == true):?>
+<?php if($_SESSION["authenticated"] == true):
+	$db=dbConnect();?>
 
 	<div id="centerpage">
 		<header class="banner">
@@ -50,34 +51,12 @@
 			<article>
 				<h1 id="main">Tracked Files Information</h1>
 
-				<table>
-					<tr class="head" id="file info">
-						<th>File Type</th>
-						<th>Count</th>
-						<th>Date Last Modified</th>
-						<th>Time Last Modified</th>
-					</tr>
-
-					<tr>
-						<th>Mastercam</th>
-						<th>94</th>
-						<th>10/16/2018</th>
-						<th>2:00 pm</th>
-					</tr>
-					<tr class="even">
-						<th>NCsimul</th>
-						<th>1204</th>
-						<th>10/15/2018</th>
-						<th>4:30 pm</th>
-					</tr>
-										<tr>
-						<th>NX</th>
-						<th>40</th>
-						<th>10/12/2018</th>
-						<th>11:00 am</th>
-					</tr>
-
-				</table>
+				<?php
+					$sql="SELECT m.Type AS 'File Type', Count(Machine_Type) AS 'Count' FROM controlled_item as c JOIN machine as m ON c.Machine_Type=m.id GROUP BY Machine_Type;";
+					DisplayDBasTable($db,$sql,False);
+					$db->close();
+					unset($db);
+				?>
 
 			</article>
 			<!-- Main Content End -->
