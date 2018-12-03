@@ -53,11 +53,13 @@
 					<article style="width:870px;overflow-y: visible;">
 						<center>
 							
-						<button type="browse" id="source" style="padding:7px 45px;">Set Source Folder</button>
+						<!--<button type="browse" id="source" style="padding:7px 45px;">Set Source Folder</button>-->
+						<font size="5px" color="blue"><b>Set Source </b></font>
     					<input type="text" name="sourcePath" value="<?PHP echo $ree1;?>"
     						style="padding:12px 10px;margin-bottom:5px;width:350px"><br>
     						
-    					<button type="browse" id="dest" style="padding:7px 33px;">Set Destination Folder</button>
+    					<!--<button type="browse" id="dest" style="padding:7px 33px;">Set Destination Folder</button>-->
+    					<font size="5px" color="blue"><b>Set Dest </b></font>
     					<input type="text" name="destPath" value="<?PHP echo $ree2;?>"
     						style="padding:12px 10px;margin-bottom:5px;width:350px"><br><br>
     						
