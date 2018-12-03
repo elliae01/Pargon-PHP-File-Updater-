@@ -31,7 +31,7 @@
 
 	<div id="centerpage">
 		<header class="banner">
-			<img src="../images/nninc.jpg" alt="Paragon's Logo" class="center"></img>
+			<?php require('../php/views/templates/logo.php'); ?>
 			<section class="logo">Controlled Files: Portal</section> <!--Rename class="title"?-->
 			<!--What should be here? PageName? -->
 			<nav>
