@@ -63,9 +63,15 @@
                 <?php 
                     require_once('./includes/dbHelper.php');
                     require_once('./includes/helpers.php');
+					require_once('C:/User.php');
+					
                     $ip = getIP();
                 	$db = dbConnect();
-                	$sql = 'INSERT INTO computername(IP_wired) VALUES(\'' . $ip . '\')';
+					$user = mysqli_real_escape_string($db, USERNAME);
+					$server = mysqli_real_escape_string($db, LOGONSERVER);
+					$comp = mysqli_real_escape_string($db, COMPUTERNAME);
+					$ip = mysqli_real_escape_string($db, $ip);
+                	$sql = "INSERT INTO computername(IP_wired, username, logonserver) VALUES('$ip' , '$user' , '$server')";
                 	$result = SendSQLCMD($db, $sql);
                 	if($result){
                 		
