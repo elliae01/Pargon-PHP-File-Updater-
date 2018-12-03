@@ -22,6 +22,7 @@
 			position: relative;
 			float: right;
 			text-align: center;
+			margin-bottom: 20px;
 		}
 		#updated{
 			position: relative;

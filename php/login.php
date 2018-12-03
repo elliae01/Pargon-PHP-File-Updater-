@@ -57,7 +57,7 @@
             exit;
         }else{
             $error1= "<div style ='font:18px Arial,tahoma,
-            sans-serif;color:#ff0000'><center>***Invalid login!***</center></div>";
+            sans-serif;color:#ff0000'><center>***Invalid!***</center></div>";
         }
     }
 ?>
