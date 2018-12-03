@@ -11,7 +11,10 @@
 		body {
 			margin: 50px; }
 		#main_page {
-			margin-bottom: 0px; }
+			margin-bottom: 50px;
+			margin-left: auto; margin-right: auto;
+			text-align: center;
+			}
 		#clear {
 			clear: both; }
 	</style>
@@ -33,13 +36,13 @@
 			</nav>
 		</header>
 		
-		<section id="main_page" style="height:500px">
+		<section id="main" style="height:500px">
 			
 			<form action="<?php echo htmlspecialchars ($_SERVER["PHP_SELF"]); ?>" method="post">
 				
 			<!-- Main Content Begin -->
 					<br><br>
-					<center><fieldset style="width:200px;border-color:blue;border-style:dotted solid;
+					<center><fieldset id="main_page" style="width:200px;border-color:blue;border-style:dotted solid;
 					background-color:  #F0F8FF;">
 						<legend><b><font size="5px" color="blue">File Selected</font></b></legend><br>
 						
@@ -48,9 +51,9 @@
 						
 						<input type="text" name="file" value="<?PHP echo $ree;?>"
     						style="padding:12px 60px;margin-bottom:20px" disabled="disabled" text-align="center";>
-    						</center></fieldset><br><br>
+    						</center></fieldset>
     						
-					<article style="width:870px;overflow-y: visible;">
+					
 						<center>
 							
 						<font size="5px" color="blue"><b>Set Source</b></font><br>
@@ -67,7 +70,7 @@
     					
     					</center>
     					
-					</article>
+				
 					
 			<!-- Main Content End -->
 			
@@ -79,7 +82,7 @@
 			<div id="clear"></div>
 			
 			</form>
-			
+			</fieldset>
 		</section>
 	</div>
 
