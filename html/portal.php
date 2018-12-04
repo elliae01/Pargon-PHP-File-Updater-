@@ -52,11 +52,11 @@
 				<h1 id="main">Tracked Files Information</h1>
 
 				<?php
-					$sql="SELECT m.Type AS 'File Type', Count(Machine_Type) AS 'Count' FROM controlled_item as c JOIN machine as m ON c.Machine_Type=m.id GROUP BY Machine_Type;";
+				
+					$sql="SELECT m.Type AS 'File Type', Count(machine_type) AS 'Count' FROM controlled_item as c JOIN machine as m ON c.machine_type=m.id GROUP BY machine_type;";
 					DisplayDBasTable($db,$sql,False);
 					echo "<br>";
-					
-					$sql="SELECT s.Name AS 'Software', Count(c.Software) AS 'Count' FROM controlled_item c JOIN software s ON c.Software=s.id GROUP BY c.Software;";
+					$sql="SELECT s.Name AS 'Software', Count(software) AS 'Count' FROM controlled_item as c JOIN software as s ON c.software=s.id GROUP BY software;";
 					DisplayDBasTable($db,$sql,False);
 					$db->close();
 					unset($db);
