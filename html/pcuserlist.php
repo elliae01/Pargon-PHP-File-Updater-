@@ -31,7 +31,7 @@
 		<section class="logo">Today's&#xA0;Status&#xA0;By Computer</section>
 			<nav> 
 				<a href="./portal.php">Return to Portal</a>
-				<a href="../FileControl.html">Start Over</a>
+				<a href="../FileControl.php">Start Over</a>
 				<a href="./pcstatus.php">PC Status</a>
 			</nav>
 		</header>
