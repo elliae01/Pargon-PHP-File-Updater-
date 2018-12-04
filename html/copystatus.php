@@ -23,12 +23,14 @@
 			float: right;
 			text-align: center;
 			margin-bottom: 20px;
+			width: 35%;
 		}
 		#updated{
 			position: relative;
 			float: left;
 			text-align: center;
 			margin: 20px;
+			width: 35%;
 		}
 		
 		h2{
@@ -58,40 +60,37 @@
 					require_once('../php/fileSystem.php');
 					//create the directory
 					$cwd = getcwd();
-					$dir = "Destination";
-	        		if(!is_dir($cwd . "/" . $dir)){
+					$dest = "Destination";
+					$destination = "/home/ubuntu/workspace/html/Destination/MasterCam/";
+					$source = "/home/ubuntu/workspace/html/Source/MasterCam/";
+					
+					//create the file directory that doesn't exist
+	        		if(!is_dir($cwd . "/" . $dest)){
 	            		echo "we will create the directory <br>";
-	            		mkdir($cwd . "/" . $dir);
+	            		mkdir($cwd . "/" . $dest);
 	        		}
-	        		//create the file that doesn't exist
-	        		// using touch we can create a file
-				    if(is_dir ($cwd . "/" .  $dir)){
-				        echo "'". $dir."'" . " is a NEW directory<br>";
-				        
-				        echo "we are now in directory of: " . getcwd()."<br>";
-				        mkdir($cwd."/".$dir."/"."MasterCam");
-				        chdir($cwd. "/" .$dir."/"."MasterCam");
-				    	//check if the example.txt exists
-				        if(!file_exists("test1.txt")){
-				            touch("test1.txt");
-				        }
-				        if(file_exists("test1.txt")){
-				            echo "the file: "."test1.txt"." NOW exists<br>";
-				        }
-				        if(!file_exists("test2.txt")){
-				            touch("test2.txt");
-				        }
-				        if(file_exists("test2.txt")){
-				            echo "the file "."test2.txt"." NOW exists<br>";
-				        }
-				        if(!file_exists("test3.txt")){
-				            touch("test3.txt");
-				        }
-				        if(file_exists("test3.txt")){
-				            echo "the file "."test3.txt"." NOW exists<br>";
+	        		if(is_dir ($cwd . "/" .  $dest)){
+				        echo "'". $dest."' is a NEW directory<br>";
+				        //echo "we are now in directory of: " . getcwd()."<br>";
+				        if(is_dir($destination)){
+				        }else{
+				        	//create the directory and 
+				        	mkdir($destination);
 				        }
 				    }
-					
+				    chdir($destination);
+				    		//check if the example.txt exists
+			    		for($i = 1; $i <= 3; $i++){
+					    	if(!copy($source."test".$i.".txt", $destination."test".$i.".txt")){
+					           echo "file cannot be copied";
+					        }else{
+					        	echo "file has been copied sucessfully!<br>";
+					        }
+					        
+					        if(file_exists("test".$i.".txt")){
+					            echo "test".$i.".txt NOW exists in the ".$dest." Directory<br>";
+					        }
+				    	}
 				?>
 			</div>
 			
@@ -99,8 +98,7 @@
 				<fieldset>
 				<h3>NEW ITEMS ADDED</h3>
 				<?php
-					chdir($cwd."/".$dir."/"."MasterCam");
-					readDirectory();
+					readDirectory($destination);
 				?>
 				</fieldset>
 				

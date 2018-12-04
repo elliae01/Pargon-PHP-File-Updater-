@@ -3,27 +3,14 @@
     //File System
     
     //using this function we can read through all of the current directories and their contents
-   function readDirectory(){
-        $path = "./";
+   function readDirectory($destination){
+        $path = $destination;
         if(is_dir($path))
         {
             $dir_handle = opendir($path);
             while( ($dirName = readdir($dir_handle) ) !== false )
             {
-                if( is_dir($dirName))
-                {
-                    echo "directory: " . $dirName ."<br>";
-                    if($dirName == "Destination")
-                    {
-                        $sub_dir_handle = opendir($dirName);
-                        while(($sub_dir = readdir($sub_dir_handle)) !== false)
-                        {
-                            echo "--> --> contents = $sub_dir <br>";
-                        }
-                        closedir($sub_dir_handle);
-                    }
-                }
-                elseif( is_file ($dirName))
+                if( is_file ($dirName))
                 {
                     echo "file: " . $dirName . "<br>";
                 }
@@ -35,6 +22,7 @@
           echo "not a directory";
         }
     }
+
    
         //making a directory object
         // $dir_obj = dir("./");
@@ -215,6 +203,42 @@
     // {
     //     echo "the file already exists<br>";
     // }
+    
+    
+        
+    //using this function we can read through all of the current directories and their contents
+//   function readDirectory($destination){
+//         $path = $destination;
+//         if(is_dir($path))
+//         {
+//             $dir_handle = opendir($path);
+//             while( ($dirName = readdir($dir_handle) ) !== false )
+//             {
+//                 if( is_dir($dirName))
+//                 {
+//                     echo "directory: " . $dirName ."<br>";
+//                     if($dirName == "Destination")
+//                     {
+//                         $sub_dir_handle = opendir($dirName);
+//                         while(($sub_dir = readdir($sub_dir_handle)) !== false)
+//                         {
+//                             echo "--> --> contents = $sub_dir <br>";
+//                         }
+//                         closedir($sub_dir_handle);
+//                     }
+//                 }
+//                 elseif( is_file ($dirName))
+//                 {
+//                     echo "file: " . $dirName . "<br>";
+//                 }
+//             }
+//             closedir($dir_handle);
+//         }
+//         else
+//         {
+//           echo "not a directory";
+//         }
+//     }
     
     
     
