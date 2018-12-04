@@ -54,6 +54,9 @@
 				<?php
 					$sql="SELECT m.Type AS 'File Type', Count(Machine_Type) AS 'Count' FROM controlled_item as c JOIN machine as m ON c.Machine_Type=m.id GROUP BY Machine_Type;";
 					DisplayDBasTable($db,$sql,False);
+					echo "<br>";
+					$sql="SELECT s.Name AS 'Software', Count(Software) AS 'Count' FROM controlled_item as c JOIN Software as s ON c.Software=s.id GROUP BY Software;";
+					DisplayDBasTable($db,$sql,False);
 					$db->close();
 					unset($db);
 				?>
