@@ -12,7 +12,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Controlled Items Logs Page</title>
+	<title>Controlled Items: Log Details</title>
 	<link rel="stylesheet" href="../css/floatlayout.css" type="text/css" title="float layout style">
 	<style type="text/css">
 		body {
