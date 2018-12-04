@@ -3,7 +3,7 @@
 
 <html>
 <head>
-	<title>Paragon Medical Forgot Password</title>
+	<title>Paragon Medical New User</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="../css/floatlayout.css" 
 		type="text/css" title="float layout style">
