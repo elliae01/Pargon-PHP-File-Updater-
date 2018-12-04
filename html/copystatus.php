@@ -23,14 +23,14 @@
 			float: right;
 			text-align: center;
 			margin-bottom: 20px;
-			width: 35%;
+			width: 45%;
 		}
 		#updated{
 			position: relative;
 			float: left;
 			text-align: center;
 			margin: 20px;
-			width: 35%;
+			width: 45%;
 		}
 		
 		h2{
@@ -55,7 +55,7 @@
 			<article>
 			<h1 id="main_page">Updates today..</h1>
 			<div id="updated">
-				<h2> FILES NEEDED </h2>
+				<h2> SOURCE FILES </h2>
 				<?php
 					require_once('../php/fileSystem.php');
 					//create the directory
@@ -68,11 +68,12 @@
 	        		if(!is_dir($cwd . "/" . $dest)){
 	            		echo "we will create the directory <br>";
 	            		mkdir($cwd . "/" . $dest);
+				        echo "'". $dest."' is a NEW directory<br>";
 	        		}
 	        		if(is_dir ($cwd . "/" .  $dest)){
-				        echo "'". $dest."' is a NEW directory<br>";
 				        //echo "we are now in directory of: " . getcwd()."<br>";
 				        if(is_dir($destination)){
+				        	echo "'".$dest."' is a OLD directory<br>";
 				        }else{
 				        	//create the directory and 
 				        	mkdir($destination);
@@ -81,23 +82,25 @@
 				    chdir($destination);
 				    		//check if the example.txt exists
 			    		for($i = 1; $i <= 3; $i++){
-					    	if(!copy($source."test".$i.".txt", $destination."test".$i.".txt")){
-					           echo "file cannot be copied";
+					        if(file_exists("test".$i.".txt")){
+					            echo "test".$i.".txt Currently exists in the ".$dest." Directory<br>";
 					        }else{
-					        	echo "file has been copied sucessfully!<br>";
+						        if(!copy($source."test".$i.".txt", $destination."test".$i.".txt")){
+						           echo "file cannot be copied";
+						        }else{
+						        	echo "test".$i.".txt's "."file has been copied sucessfully!<br>";
+						        }
 					        }
 					        
-					        if(file_exists("test".$i.".txt")){
-					            echo "test".$i.".txt NOW exists in the ".$dest." Directory<br>";
-					        }
 				    	}
 				?>
 			</div>
 			
 			<div id="newFiles">
 				<fieldset>
-				<h3>NEW ITEMS ADDED</h3>
+				<h3>DESTINATION ITEMS</h3>
 				<?php
+					chdir($destination);
 					readDirectory($destination);
 				?>
 				</fieldset>
