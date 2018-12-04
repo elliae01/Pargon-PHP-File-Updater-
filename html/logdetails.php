@@ -6,7 +6,7 @@
 ?>
 
 <!DOCTYPE html>
-<!-- This example is based on the examle in "Dynamic Web Programming and HTML5" by Paul S. Wang -->
+
 
 <html>
 
