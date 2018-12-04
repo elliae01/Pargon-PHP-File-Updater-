@@ -63,8 +63,7 @@
                 <?php 
                     require_once('./includes/dbHelper.php');
                     require_once('./includes/helpers.php');
-					require_once('C:/User.php');
-					
+
                     $ip = getIP();
                 	$db = dbConnect();
 					$user = mysqli_real_escape_string($db, USERNAME);
