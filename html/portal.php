@@ -5,7 +5,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Controlled Items Portal Page</title>
+	<title>Controlled Items: Portal</title>
 	<link rel="stylesheet" href="../css/floatlayout.css" type="text/css" title="float layout style">
 	<style type="text/css">
 		body {

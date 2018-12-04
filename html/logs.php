@@ -5,7 +5,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Controlled Items Logs Page</title>
+	<title>Controlled Items: Logs</title>
 	<link rel="stylesheet" href="../css/floatlayout.css" type="text/css" title="float layout style">
 	<script type="text/javascript" src="../js/logdetails.js"></script>
 	<style type="text/css">
