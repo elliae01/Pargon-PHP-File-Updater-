@@ -3,16 +3,18 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Copy Status</title>
+	<title>Controlled Files: Copy Status</title>
 	<link rel="stylesheet" href="../css/floatlayout.css" 
 		type="text/css" title="float layout style">
 	<style type="text/css">
 		body {
-			margin: 50px; 
+			 
 			font-size: 20px;
 		}
 		#main_page {
-			margin-bottom: 10px; }
+		margin-bottom: 10px; 
+			
+		}
 		#clear {
 			clear: both; 
 			
@@ -21,24 +23,24 @@
 			position: relative;
 			float: right;
 			text-align: center;
-			margin-bottom: 20px;
 			width: 45%;
 		}
 		#updated{
 			position: relative;
 			float: left;
 			text-align: center;
-			margin: 20px;
 			width: 45%;
 		}
 		
 		h2{
 			color: red;
 			font-size: 2em;
+			margin:0px;
 		}
 		h3{
 			color: blue;
 			font-size: 2em;
+			margin:0px;
 		}
 	</style>
 </head>
@@ -54,8 +56,11 @@
 			<article>
 			<h1 id="main_page">Updates today..</h1>
 			<div id="updated">
+				<fieldset>
 				<h2> SOURCE FILES </h2>
 				<?php
+					//break added intentionally to separate data and header
+					echo "<br>";
 					require_once('../php/fileSystem.php');
 					//create the directory
 					$cwd = getcwd();
@@ -94,17 +99,19 @@
 				    	}
 				?>
 			</div>
-			
-			<div id="newFiles">
-				<fieldset>
-				<h3>DESTINATION ITEMS</h3>
-				<?php
-					chdir($destination);
-					readDirectory($destination);
-				?>
-				</fieldset>
+			</fieldset>
+				<div id="newFiles">
+					<fieldset>
+					<h3>DESTINATION ITEMS</h3>
+					
+					<?php
+						echo "<br>";
+						chdir($destination);
+						readDirectory($destination);
+					?>
 				
-			</div>
+					</fieldset>
+				</div>
 			
 			</article>
 			<!-- Main Content End -->
