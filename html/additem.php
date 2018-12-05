@@ -51,11 +51,11 @@
 			$sql = 'INSERT INTO controlled_item(software, machine_type, file_rule, source_folder, destination_folder, notes ) VALUES(\'' . mysqli_real_escape_string($db, $soft) .'\', \'' . mysqli_real_escape_string($db, $machine) .'\', \''. mysqli_real_escape_string($db, $rule) . '\', \'' . mysqli_real_escape_string($db, $source) .'\', \'' . mysqli_real_escape_string($db, $dest) .'\', \'' . mysqli_real_escape_string($db, $comment) . '\')';
 			$result = SendSQLCMD($db, $sql);
 			if($result){
-				echo "Item added sucessfully";
+				echo "<div style= 'color: red'><br><center>Item added sucessfully!</center></div>";
 			}
 		}
 		else{
-			echo "<h1 style=color:#f00>You must completely fill out the form!</h1><br/>";
+			echo "<h1 style=color:#f00>You must completely fill out the form!</h1>";
 		}
 	}
 	
