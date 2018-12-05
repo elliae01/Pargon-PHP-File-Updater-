@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="utf-8"/>
-	<title>Controlled Item PC User List</title>
+	<title>Controlled Items: PC User List</title>
 	<link rel="stylesheet" href="../css/floatlayout.css" 
 		type="text/css" title="float layout style">
 	<script type="text/javascript" src="../js/pcuserlist.js"></script>
@@ -27,7 +27,7 @@
 
 	<div id="centerpage">
 		<header class="banner">
-		<img src="../images/nninc.jpg" alt="Paragon's Logo" class="center"></img>
+		<?php require('../php/views/templates/logo.php'); ?>
 		<section class="logo">Today's&#xA0;Status&#xA0;By Computer</section>
 			<nav> 
 				<a href="./portal.php">Return to Portal</a>

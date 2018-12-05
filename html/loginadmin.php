@@ -49,7 +49,7 @@
 	<div class = "container">
 	<div id="centerpage" style="width: 60%">
 		<header class="banner">
-		<img src="../images/nninc.jpg" alt="Paragon's Logo" class="center"></img>
+		<?php require('../php/views/templates/logo.php'); ?>
 			<section class="logo">Admin Login</section>
 			<nav>         
 				<a href="#"></a>

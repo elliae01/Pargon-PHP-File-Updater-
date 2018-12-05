@@ -14,7 +14,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Controlled Items Review Items</title>
+	<title>Controlled Items: Review Items</title>
 	<link rel="stylesheet" href="../css/floatlayout.css" 
 		type="text/css" title="float layout style">
 	<style type="text/css">
@@ -37,7 +37,7 @@
 
 	<div id="centerpage">
 		<header class="banner">
-		<img src="../images/nninc.jpg" alt="Paragon's Logo" class="center"></img>
+		<?php require('../php/views/templates/logo.php'); ?>
 			<section class="logo">Review Controlled items</section>
 			<nav>         
 				<a href="./administeritems.php">Return to Full List</a>

@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="utf-8"/>
-	<title>Page Floate Layout Template</title>
+	<title>Controlled Items: PC Status</title>
 	<link rel="stylesheet" href="../css/floatlayout.css" 
 		type="text/css" title="float layout style">
 	<style type="text/css">
@@ -24,7 +24,7 @@
 
 	<div id="centerpage">
 		<header class="banner">
-		<img src="../images/nninc.jpg" alt="Paragon's Logo" class="center"></img>
+			<?php require('../php/views/templates/logo.php'); ?>
 			<section class="logo">PC Status</section>
 			<nav>         
 				<a href="./pcuserlist.php">back to PC List</a>

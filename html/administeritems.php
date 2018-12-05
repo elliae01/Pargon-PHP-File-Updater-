@@ -8,7 +8,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Controlled Items Administer Items</title>
+	<title>Controlled Items: Administer Items</title>
 	<link rel="stylesheet" href="../css/floatlayout.css" 
 		type="text/css" title="float layout style">
 	<script type="text/javascript" src="../js/administeritems.js"></script>

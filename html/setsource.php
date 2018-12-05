@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Set Source</title>
+	<title>Controlled Files: Set Source</title>
 	<link rel="stylesheet" href="../css/floatlayout.css" 
 		type="text/css" title="float layout style">
 	<style type="text/css">
@@ -26,7 +26,7 @@
 	
 	<div id="centerpage" style="width: 60%">
 		<header class="banner">
-		<img src="../images/nninc.jpg" alt="Paragon's Logo" class="center"></img>
+		<?php require('../php/views/templates/logo.php'); ?>
 			<section class="logo">File&#xA0;Locations&#xA0;</section>
 			<nav>         
 				<a href="administeritems.php">&larr; Return to List</a>

@@ -54,7 +54,7 @@
 	<div class="loader" style="align-text:center;display:none"></div>
 	<div id="centerpage" style="width: 40%">
 		<header class="banner">
-		<img src="../images/nninc.jpg" alt="Paragon's Logo" class="center"></img>
+		<?php require('../php/views/templates/logo.php'); ?>
 			<section class="logo">Forgot&#xA0;Password&#xA0;</section>
 			<nav>         
 				<a href="#"></a>

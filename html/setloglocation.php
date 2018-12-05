@@ -33,7 +33,7 @@
 
 	<div id="centerpage">
 		<header class="banner">
-			<img src="../images/nninc.jpg" alt="Paragon's Logo" class="center"></img>
+		<?php require('../php/views/templates/logo.php'); ?>
 			<section class="logo">View and Modify Logs</section>
 			<nav>
 				<a href="./pcuserlist.php">PC User List</a>

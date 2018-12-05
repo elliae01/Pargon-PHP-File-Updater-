@@ -126,7 +126,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Page Floate Layout Template</title>
+	<title>Controlled Items: Add Item</title>
 	<link rel="stylesheet" href="../css/floatlayout.css" type="text/css" title="float layout style">
 	<script type="text/javascript" src="../js/additem.js"></script>
 	<style type="text/css">
@@ -150,7 +150,7 @@
 
 	<div id="centerpage">
 		<header class="banner">
-			<img src="../images/nninc.jpg" alt="Paragon's Logo" class="center"></img>
+		<?php require('../php/views/templates/logo.php'); ?>
 			<section class="logo">Add New Items</section>
 			<nav>
 				<a href="./portal.php">Return to Portal</a>
@@ -202,15 +202,15 @@
 					<input type="text" id="ruletext" name="ruletext" value="<?php saveValues("ruletext"); ?>" /> <br><br>
 					
 					<label for="source-path">Source Path: &ensp;</label><br>
-					<input type="text" id="sourcetext" name="sourcetext" value="<?php saveValues("sourcetext"); ?>"/> <br><br>
+					<input type="text" id="sourcetext" name="sourcetext" style="width: 100%;" value="<?php saveValues("sourcetext"); ?>"/> <br><br>
 					
 					<label for="destination">Destination Folder: &ensp;</label><br>
-					<input type="text" id="desttext" name="desttext" value="<?php saveValues("desttext"); ?>"/> <br><br><br>
+					<input type="text" id="desttext" name="desttext" style="width: 100%;" value="<?php saveValues("desttext"); ?>"/> <br><br>
 					
 					<label for="comments">Comments: &ensp;</label><br>
-					<textarea rows="5" cols="70" name="comments" id="comments"><?php saveValues("comments"); ?></textarea><br><br><br><br><br><br><br>
+					<textarea rows="5" cols="70" name="comments" id="comments"><?php saveValues("comments"); ?></textarea><br><br><br>
 	
-					<button type="submit" name="submit">Add This Item</button> <br><br><br><br><br><br><br><br><br><br><br><br>
+					<button type="submit" name="submit">Add This Item</button> <br><br>
 				</form>
 				
 

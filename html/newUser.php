@@ -2,7 +2,7 @@
 
 <html>
 <head>
-	<title>Paragon Medical New User</title>
+	<title>Controlled Items: New User</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="../css/floatlayout.css" 
 		type="text/css" title="float layout style">
@@ -39,7 +39,7 @@
     
 	<div id="centerpage" style="width: 40%">
 		<header class="banner">
-		<img src="../images/nninc.jpg" alt="Paragon's Logo" class="center"></img>
+		<?php require('../php/views/templates/logo.php'); ?>
 			<section class="logo">New User</section>
 			<nav>         
 				<a href="#"></a>
